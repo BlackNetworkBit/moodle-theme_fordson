@@ -15,13 +15,13 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
-* Heading and course images settings page file.
-*
-* @packagetheme_fordson
-* @copyright  2016 Chris Kenniburg
-* @creditstheme_boost - MoodleHQ
-* @licensehttp://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
-*/
+ * Heading and course images settings page file.
+ *
+ * @packagetheme_fordson
+ * @copyright          2016 Chris Kenniburg
+ * @creditstheme_boost - MoodleHQ
+ * @licensehttp        ://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
 
 defined('MOODLE_INTERNAL') || die();
 
@@ -38,11 +38,11 @@ $page->add($setting);
 
 // Favicon upload.
 $name = 'theme_fordson/favicon';
-$title = get_string ( 'favicon', 'theme_fordson' );
-$description = get_string ( 'favicon_desc', 'theme_fordson' );
-$setting = new admin_setting_configstoredfile( $name, $title, $description, 'favicon', 0,
-    array('maxfiles' => 1, 'accepted_types' => array('png', 'jpg', 'ico')));
-$setting->set_updatedcallback ( 'theme_reset_all_caches' );
+$title = get_string('favicon', 'theme_fordson');
+$description = get_string('favicon_desc', 'theme_fordson');
+$setting = new admin_setting_configstoredfile($name, $title, $description, 'favicon', 0,
+    ['maxfiles' => 1, 'accepted_types' => ['png', 'jpg', 'ico']]);
+$setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
 // logo image.

@@ -18,21 +18,21 @@
  * Overriden question type shortanswer.
  *
  * @package    theme_fordson
- * 
+ *
  */
 defined('MOODLE_INTERNAL') || die();
 
 require_once($CFG->dirroot . '/question/type/shortanswer/renderer.php');
 
 class theme_fordson_qtype_shortanswer_renderer extends qtype_shortanswer_renderer {
-	public function formulation_and_controls(question_attempt $qa,
-            question_display_options $options) {
+    public function formulation_and_controls(question_attempt $qa,
+        question_display_options $options) {
 
         $question = $qa->get_question();
         $currentanswer = $qa->get_last_qt_var('answer');
 
         $inputname = $qa->get_qt_field_name('answer');
-        $inputattributes = array(
+        $inputattributes = [
             'type' => 'text',
             'name' => $inputname,
             'spellcheck' => 'false',
@@ -40,7 +40,7 @@ class theme_fordson_qtype_shortanswer_renderer extends qtype_shortanswer_rendere
             'id' => $inputname,
             'size' => 80,
             'class' => 'form-control',
-        );
+        ];
 
         if ($options->readonly) {
             $inputattributes['readonly'] = 'readonly';
@@ -48,7 +48,7 @@ class theme_fordson_qtype_shortanswer_renderer extends qtype_shortanswer_rendere
 
         $feedbackimg = '';
         if ($options->correctness) {
-            $answer = $question->get_matching_answer(array('answer' => $currentanswer));
+            $answer = $question->get_matching_answer(['answer' => $currentanswer]);
             if ($answer) {
                 $fraction = $answer->fraction;
             } else {
@@ -67,27 +67,32 @@ class theme_fordson_qtype_shortanswer_renderer extends qtype_shortanswer_rendere
         $input = html_writer::empty_tag('input', $inputattributes) . $feedbackimg;
 
         if ($placeholder) {
-            $inputinplace = html_writer::tag('label', get_string('answer'),
-                    array('for' => $inputattributes['id'], 'class' => 'accesshide'));
+            $inputinplace = html_writer::tag('label',
+                get_string('answer'),
+                ['for' => $inputattributes['id'], 'class' => 'accesshide']);
             $inputinplace .= $input;
-            $questiontext = substr_replace($questiontext, $inputinplace,
-                    strpos($questiontext, $placeholder), strlen($placeholder));
+            $questiontext = substr_replace($questiontext,
+                $inputinplace,
+                strpos($questiontext, $placeholder),
+                strlen($placeholder));
         }
 
-        $result = html_writer::tag('div', $questiontext, array('class' => 'qtext'));
+        $result = html_writer::tag('div', $questiontext, ['class' => 'qtext']);
 
         if (!$placeholder) {
-            $result .= html_writer::start_tag('div', array('class' => 'ablock form-inline'));
-            $result .= html_writer::tag('label', get_string('answer', 'qtype_shortanswer',
-                    html_writer::tag('span', $input, array('class' => 'answer'))),
-                    array('for' => $inputattributes['id']));
+            $result .= html_writer::start_tag('div', ['class' => 'ablock form-inline']);
+            $result .= html_writer::tag('label',
+                get_string('answer',
+                    'qtype_shortanswer',
+                    html_writer::tag('span', $input, ['class' => 'answer'])),
+                ['for' => $inputattributes['id']]);
             $result .= html_writer::end_tag('div');
         }
 
         if ($qa->get_state() == question_state::$invalid) {
             $result .= html_writer::nonempty_tag('div',
-                    $question->get_validation_error(array('answer' => $currentanswer)),
-                    array('class' => 'validationerror'));
+                $question->get_validation_error(['answer' => $currentanswer]),
+                ['class' => 'validationerror']);
         }
 
         return $result;

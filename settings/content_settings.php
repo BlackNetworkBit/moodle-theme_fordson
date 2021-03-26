@@ -15,13 +15,13 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
-* Heading and course images settings page file.
-*
-* @packagetheme_fordson
-* @copyright  2016 Chris Kenniburg
-* @creditstheme_fordson - MoodleHQ
-* @licensehttp://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
-*/
+ * Heading and course images settings page file.
+ *
+ * @packagetheme_fordson
+ * @copyright            2016 Chris Kenniburg
+ * @creditstheme_fordson - MoodleHQ
+ * @licensehttp          ://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
 
 defined('MOODLE_INTERNAL') || die();
 

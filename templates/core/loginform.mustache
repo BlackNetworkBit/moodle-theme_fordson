@@ -92,265 +92,275 @@
 }}
 
 {{#hascustomlogin}}
-<div class="m-y-3 hidden-sm-down"></div>
+    <div class="m-y-3 hidden-sm-down"></div>
 
-<div class="row signin">
-    <div class="col-xl-3 push-xl-1 col-md-4">
-    <div class="fpsignup">
-        <div class="card-title text-xs-center">
-            {{#logourl}}
-                <h1><img src="{{logourl}}" class="img-fluid" title="{{sitename}}" alt="{{sitename}}"/></h1>
-            {{/logourl}}
-            {{^logourl}}
-                <h1>{{sitename}}</h1>
-            {{/logourl}}
-            <hr>
-        </div>
-            {{#error}}
-                <div class="loginerrors m-t-1">
-                    <a href="#" id="loginerrormessage" class="accesshide">{{error}}</a>
-                    <div class="alert alert-danger" role="alert">{{error}}</div>
+    <div class="row signin">
+        <div class="col-xl-3 push-xl-1 col-md-4">
+            <div class="fpsignup">
+                <div class="card-title text-xs-center">
+                    {{#logourl}}
+                        <h1><img src="{{logourl}}" class="img-fluid" title="{{sitename}}" alt="{{sitename}}"/></h1>
+                    {{/logourl}}
+                    {{^logourl}}
+                        <h1>{{sitename}}</h1>
+                    {{/logourl}}
+                    <hr>
                 </div>
-            {{/error}}
-            <div class="signinform">
-                        <h3>{{#str}}fpsignup, theme_fordson{{/str}}</h3>
-                        <form class="m-t-1" action="{{{ config.wwwroot }}}/login/index.php" method="POST" role="form">
+                {{#error}}
+                    <div class="loginerrors m-t-1">
+                        <a href="#" id="loginerrormessage" class="accesshide">{{error}}</a>
+                        <div class="alert alert-danger" role="alert">{{error}}</div>
+                    </div>
+                {{/error}}
+                <div class="signinform">
+                    <h3>{{#str}}fpsignup, theme_fordson{{/str}}</h3>
+                    <form class="m-t-1" action="{{{ config.wwwroot }}}/login/index.php" method="POST" role="form">
                         <input type="hidden" name="logintoken" value="{{logintoken}}">
-                            <label for="username">
-                              {{^canloginbyemail}}
-                                  {{#str}}username{{/str}}
-                              {{/canloginbyemail}}
-                              {{#canloginbyemail}}
-                                  {{#str}}usernameemail{{/str}}
-                              {{/canloginbyemail}}
-                              {{#cansignup}}
+                        <label for="username">
+                            {{^canloginbyemail}}
+                                {{#str}}username{{/str}}
+                            {{/canloginbyemail}}
+                            {{#canloginbyemail}}
+                                {{#str}}usernameemail{{/str}}
+                            {{/canloginbyemail}}
+                            {{#cansignup}}
                                 | <a href="{{{ config.wwwroot }}}/login/signup.php?">{{#str}}newaccount{{/str}}</a>
-                              {{/cansignup}}
-                            </label>
-                            <div class="input-group">
-                              <div class="input-group-addon"></div>
-                              <input type="text" class="form-control" id="username" name="username" placeholder="{{#str}}username{{/str}}" required />
-                            </div>
-                            <label for="password">{{#str}}password{{/str}}</label>
-                            <div class="input-group">
-                              <div class="input-group-addon"></div>
-                              <input type="password" class="form-control" id="password" name="password" placeholder="{{#str}}password{{/str}}" required />
-                            </div>
-                            <div class="sign-up-btn">
-                                <button type="submit" class="btn btn-primary">{{#str}}login{{/str}}</button>
-                            </div>
-                        </form>
-                        <p><a href="{{{ config.wwwroot }}}/login/forgot_password.php">{{#str}}forgotten{{/str}}</a></p> 
-                        
-                        {{#hasidentityproviders}}
-                            <h6 class="mt-2">{{#str}} potentialidps, auth {{/str}}</h6>
-                            <div class="potentialidplist" class="mt-3">
-                                {{#identityproviders}}
-                                    <div class="potentialidp">
-                                        <a href="{{url}}" title={{#quote}}{{name}}{{/quote}} class="btn btn-secondary btn-block">
-                                            {{#iconurl}}
-                                                <img src="{{iconurl}}" alt="" width="24" height="24"/>
-                                            {{/iconurl}}
-                                            {{name}}
-                                        </a>
-                                    </div>
-                                {{/identityproviders}}
-                            </div>
-                        {{/hasidentityproviders}}
-                        
-                        {{#canloginasguest}}
+                            {{/cansignup}}
+                        </label>
+                        <div class="input-group">
+                            <div class="input-group-addon"></div>
+                            <input type="text" class="form-control" id="username" name="username"
+                                   placeholder="{{#str}}username{{/str}}" required/>
+                        </div>
+                        <label for="password">{{#str}}password{{/str}}</label>
+                        <div class="input-group">
+                            <div class="input-group-addon"></div>
+                            <input type="password" class="form-control" id="password" name="password"
+                                   placeholder="{{#str}}password{{/str}}" required/>
+                        </div>
+                        <div class="sign-up-btn">
+                            <button type="submit" class="btn btn-primary">{{#str}}login{{/str}}</button>
+                        </div>
+                    </form>
+                    <p><a href="{{{ config.wwwroot }}}/login/forgot_password.php">{{#str}}forgotten{{/str}}</a></p>
+
+                    {{#hasidentityproviders}}
+                        <h6 class="mt-2">{{#str}} potentialidps, auth {{/str}}</h6>
+                        <div class="potentialidplist" class="mt-3">
+                            {{#identityproviders}}
+                                <div class="potentialidp">
+                                    <a href="{{url}}" title={{#quote}}{{name}}{{/quote}}
+                                       class="btn btn-secondary btn-block">
+                                        {{#iconurl}}
+                                            <img src="{{iconurl}}" alt="" width="24" height="24"/>
+                                        {{/iconurl}}
+                                        {{name}}
+                                    </a>
+                                </div>
+                            {{/identityproviders}}
+                        </div>
+                    {{/hasidentityproviders}}
+
+                    {{#canloginasguest}}
                         <div class="mt-2">
                             <p>{{#str}}someallowguest{{/str}}</p>
                             <form action="{{loginurl}}" method="post" id="guestlogin">
                                 <input type="hidden" name="logintoken" value="{{logintoken}}">
-                                <input type="hidden" name="username" value="guest" />
-                                <input type="hidden" name="password" value="guest" />
-                                <button class="btn btn-secondary btn-block" type="submit">{{#str}}loginguest{{/str}}</button>
+                                <input type="hidden" name="username" value="guest"/>
+                                <input type="hidden" name="password" value="guest"/>
+                                <button class="btn btn-secondary btn-block" type="submit">{{#str}}
+                                    loginguest{{/str}}</button>
                             </form>
                         </div>
                     {{/canloginasguest}}
-            </div>
-    </div>
-    </div>
-
-    <div class="col-xl-9 push-xl-1 col-md-8">
-        <div class="logintop">
-        {{#logintopimage}}
-            <div class="logintopimage">
-                <img src="{{{ logintopimage }}}" class="img-fluid" alt="Responsive image">
-            </div>
-        {{/logintopimage}}
-        </div>
-        {{#alertbox}}
-            <div class="alertbox">
-                <div class="alertmessage">
-                {{{alertbox}}}
                 </div>
             </div>
-            <div style="clear:both;"></div>
-        {{/alertbox}}
-    </div>
+        </div>
 
-</div>
+        <div class="col-xl-9 push-xl-1 col-md-8">
+            <div class="logintop">
+                {{#logintopimage}}
+                    <div class="logintopimage">
+                        <img src="{{{ logintopimage }}}" class="img-fluid" alt="Responsive image">
+                    </div>
+                {{/logintopimage}}
+            </div>
+            {{#alertbox}}
+                <div class="alertbox">
+                    <div class="alertmessage">
+                        {{{alertbox}}}
+                    </div>
+                </div>
+                <div style="clear:both;"></div>
+            {{/alertbox}}
+        </div>
+
+    </div>
 
 {{/hascustomlogin}}
 
 
 {{#hasdefaultlogin}}
-        {{#alertbox}}
-            <div class="alertbox">
-                <div class="alertmessage">
+    {{#alertbox}}
+        <div class="alertbox">
+            <div class="alertmessage">
                 {{{alertbox}}}
-                </div>
             </div>
-            <div style="clear:both;"></div>
-        {{/alertbox}}
-<div class="my-1 my-sm-5"></div>
-<div class="row justify-content-center">
+        </div>
+        <div style="clear:both;"></div>
+    {{/alertbox}}
+    <div class="my-1 my-sm-5"></div>
+    <div class="row justify-content-center">
 
-<div class="col-xl-6 col-sm-8 ">
-<div class="card">
-    <div class="card-block">
-        {{#logourl}}
-            <h1 class="card-header text-center" ><img src="{{logourl}}" class="img-fluid" title="{{sitename}}" alt="{{sitename}}"/></h1>
-        {{/logourl}}
-        {{^logourl}}
-            <h1 class="card-header text-center">{{sitename}}</h1>
-        {{/logourl}}
-        <div class="card-body">
-            {{#cansignup}}
-                <div class="sr-only">
-                    <a href="{{signupurl}}">{{#str}} tocreatenewaccount {{/str}}</a>
-                </div>
-            {{/cansignup}}
-
-            {{#error}}
-                <div class="loginerrors mt-3">
-                    <a href="#" id="loginerrormessage" class="accesshide">{{error}}</a>
-                    <div class="alert alert-danger" role="alert">{{error}}</div>
-                </div>
-            {{/error}}
-
-            <div class="row justify-content-md-center">
-                <div class="col-md-5">
-                    <form class="mt-3" action="{{loginurl}}" method="post" id="login">
-                        <input id="anchor" type="hidden" name="anchor" value="">
-                        <script>document.getElementById('anchor').value = location.hash;</script>
-                        <input type="hidden" name="logintoken" value="{{logintoken}}">
-                        <div class="form-group">
-                            <label for="username" class="sr-only">
-                                {{^canloginbyemail}}
-                                    {{#str}} username {{/str}}
-                                {{/canloginbyemail}}
-                                {{#canloginbyemail}}
-                                    {{#str}} usernameemail {{/str}}
-                                {{/canloginbyemail}}
-                            </label>
-                            <input type="text" name="username" id="username"
-                                class="form-control"
-                                value="{{username}}"
-                                placeholder={{#quote}}{{^canloginbyemail}}{{#str}}username{{/str}}{{/canloginbyemail}}{{#canloginbyemail}}{{#str}}usernameemail{{/str}}{{/canloginbyemail}}{{/quote}}>
-                        </div>
-                        <div class="form-group">
-                            <label for="password" class="sr-only">{{#str}} password {{/str}}</label>
-                            <input type="password" name="password" id="password" value=""
-                                class="form-control"
-                                placeholder={{#quote}}{{#str}}password{{/str}}{{/quote}}>
-                        </div>
-                        {{#rememberusername}}
-                            <div class="rememberpass mt-3">
-                                <input type="checkbox" name="rememberusername" id="rememberusername" value="1" {{#username}}checked="checked"{{/username}} />
-                                <label for="rememberusername">{{#str}} rememberusername, admin {{/str}}</label>
+        <div class="col-xl-6 col-sm-8 ">
+            <div class="card">
+                <div class="card-block">
+                    {{#logourl}}
+                        <h1 class="card-header text-center"><img src="{{logourl}}" class="img-fluid"
+                                                                 title="{{sitename}}" alt="{{sitename}}"/></h1>
+                    {{/logourl}}
+                    {{^logourl}}
+                        <h1 class="card-header text-center">{{sitename}}</h1>
+                    {{/logourl}}
+                    <div class="card-body">
+                        {{#cansignup}}
+                            <div class="sr-only">
+                                <a href="{{signupurl}}">{{#str}} tocreatenewaccount {{/str}}</a>
                             </div>
-                        {{/rememberusername}}
+                        {{/cansignup}}
 
-                        <button type="submit" class="btn btn-primary btn-block mt-3" id="loginbtn">{{#str}}login{{/str}}</button>
-                    </form>
-                </div>
-
-                <div class="col-md-5">
-                    <div class="forgetpass mt-3">
-                        <p><a href="{{forgotpasswordurl}}">{{#str}}forgotten{{/str}}</a></p>
-                    </div>
-
-                    <div class="mt-3">
-                        {{#str}} cookiesenabled {{/str}}
-                        {{{cookieshelpiconformatted}}}
-                    </div>
-                    {{#canloginasguest}}
-                        <div class="mt-2">
-                            <p>{{#str}}someallowguest{{/str}}</p>
-                            <form action="{{loginurl}}" method="post" id="guestlogin">
-                            	<input type="hidden" name="logintoken" value="{{logintoken}}">
-                                <input type="hidden" name="username" value="guest" />
-                                <input type="hidden" name="password" value="guest" />
-                                <button class="btn btn-secondary btn-block" type="submit">{{#str}}loginguest{{/str}}</button>
-                            </form>
-                        </div>
-                    {{/canloginasguest}}
-
-                {{#hasidentityproviders}}
-                    <h6 class="mt-2">{{#str}} potentialidps, auth {{/str}}</h6>
-                    <div class="potentialidplist" class="mt-3">
-                        {{#identityproviders}}
-                            <div class="potentialidp">
-                                <a href="{{url}}" title={{#quote}}{{name}}{{/quote}} class="btn btn-secondary btn-block">
-                                    {{#iconurl}}
-                                        <img src="{{iconurl}}" alt="" width="24" height="24"/>
-                                    {{/iconurl}}
-                                    {{name}}
-                                </a>
+                        {{#error}}
+                            <div class="loginerrors mt-3">
+                                <a href="#" id="loginerrormessage" class="accesshide">{{error}}</a>
+                                <div class="alert alert-danger" role="alert">{{error}}</div>
                             </div>
-                        {{/identityproviders}}
+                        {{/error}}
+
+                        <div class="row justify-content-md-center">
+                            <div class="col-md-5">
+                                <form class="mt-3" action="{{loginurl}}" method="post" id="login">
+                                    <input id="anchor" type="hidden" name="anchor" value="">
+                                    <script>document.getElementById('anchor').value = location.hash;</script>
+                                    <input type="hidden" name="logintoken" value="{{logintoken}}">
+                                    <div class="form-group">
+                                        <label for="username" class="sr-only">
+                                            {{^canloginbyemail}}
+                                                {{#str}} username {{/str}}
+                                            {{/canloginbyemail}}
+                                            {{#canloginbyemail}}
+                                                {{#str}} usernameemail {{/str}}
+                                            {{/canloginbyemail}}
+                                        </label>
+                                        <input type="text" name="username" id="username"
+                                               class="form-control"
+                                               value="{{username}}"
+                                               placeholder={{#quote}}{{^canloginbyemail}}{{#str}}username{{/str}}{{/canloginbyemail}}{{#canloginbyemail}}{{#str}}usernameemail{{/str}}{{/canloginbyemail}}{{/quote}}>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="password" class="sr-only">{{#str}} password {{/str}}</label>
+                                        <input type="password" name="password" id="password" value=""
+                                               class="form-control"
+                                               placeholder={{#quote}}{{#str}}password{{/str}}{{/quote}}>
+                                    </div>
+                                    {{#rememberusername}}
+                                        <div class="rememberpass mt-3">
+                                            <input type="checkbox" name="rememberusername" id="rememberusername"
+                                                   value="1" {{#username}}checked="checked"{{/username}} />
+                                            <label for="rememberusername">{{#str}}
+                                                rememberusername, admin {{/str}}</label>
+                                        </div>
+                                    {{/rememberusername}}
+
+                                    <button type="submit" class="btn btn-primary btn-block mt-3" id="loginbtn">{{#str}}
+                                        login{{/str}}</button>
+                                </form>
+                            </div>
+
+                            <div class="col-md-5">
+                                <div class="forgetpass mt-3">
+                                    <p><a href="{{forgotpasswordurl}}">{{#str}}forgotten{{/str}}</a></p>
+                                </div>
+
+                                <div class="mt-3">
+                                    {{#str}} cookiesenabled {{/str}}
+                                    {{{cookieshelpiconformatted}}}
+                                </div>
+                                {{#canloginasguest}}
+                                    <div class="mt-2">
+                                        <p>{{#str}}someallowguest{{/str}}</p>
+                                        <form action="{{loginurl}}" method="post" id="guestlogin">
+                                            <input type="hidden" name="logintoken" value="{{logintoken}}">
+                                            <input type="hidden" name="username" value="guest"/>
+                                            <input type="hidden" name="password" value="guest"/>
+                                            <button class="btn btn-secondary btn-block" type="submit">{{#str}}
+                                                loginguest{{/str}}</button>
+                                        </form>
+                                    </div>
+                                {{/canloginasguest}}
+
+                                {{#hasidentityproviders}}
+                                    <h6 class="mt-2">{{#str}} potentialidps, auth {{/str}}</h6>
+                                    <div class="potentialidplist" class="mt-3">
+                                        {{#identityproviders}}
+                                            <div class="potentialidp">
+                                                <a href="{{url}}" title={{#quote}}{{name}}{{/quote}}
+                                                   class="btn btn-secondary btn-block">
+                                                    {{#iconurl}}
+                                                        <img src="{{iconurl}}" alt="" width="24" height="24"/>
+                                                    {{/iconurl}}
+                                                    {{name}}
+                                                </a>
+                                            </div>
+                                        {{/identityproviders}}
+                                    </div>
+                                {{/hasidentityproviders}}
+                            </div>
+                        </div>
                     </div>
-                {{/hasidentityproviders}}
                 </div>
             </div>
         </div>
     </div>
-</div>
-</div>
-</div>
 
 
-{{#hasinstructions}}
-<div class="row justify-content-center mt-3">
-<div class="col-xl-6 col-sm-8">
-<div class="card">
-    <div class="card-body">
-        <div class="card-title">
-            <h2>{{#str}}firsttime{{/str}}</h2>
+    {{#hasinstructions}}
+        <div class="row justify-content-center mt-3">
+            <div class="col-xl-6 col-sm-8">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="card-title">
+                            <h2>{{#str}}firsttime{{/str}}</h2>
+                        </div>
+                        <div>
+                            {{{instructions}}}
+                            {{#cansignup}}
+                                <form class="mt-3" action="{{signupurl}}" method="get" id="signup">
+                                    <button type="submit" class="btn btn-secondary">{{#str}}startsignup{{/str}}</button>
+                                </form>
+                            {{/cansignup}}
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div>
-        {{{instructions}}}
-        {{#cansignup}}
-            <form class="mt-3" action="{{signupurl}}" method="get" id="signup">
-                <button type="submit" class="btn btn-secondary">{{#str}}startsignup{{/str}}</button>
-            </form>
-        {{/cansignup}}
-        </div>
-    </div>
-</div>
-</div>
-</div>
-{{/hasinstructions}}
+    {{/hasinstructions}}
 
 {{/hasdefaultlogin}}
 
 {{#js}}
     {{#error}}
         require(['jquery'], function($) {
-            $('#loginerrormessage').focus();
+        $('#loginerrormessage').focus();
         });
     {{/error}}
     {{^error}}
         {{#autofocusform}}
             require(['jquery'], function($) {
-                if ($('#username').val()) {
-                    $('#password').focus();
-                } else {
-                    $('#username').focus();
-                }
+            if ($('#username').val()) {
+            $('#password').focus();
+            } else {
+            $('#username').focus();
+            }
             });
         {{/autofocusform}}
     {{/error}}

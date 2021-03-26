@@ -28,25 +28,25 @@
  *
  * @param stdClass $course
  * @param stdClass $cm
- * @param context $context
- * @param string $filearea
- * @param array $args
- * @param bool $forcedownload
- * @param array $options
+ * @param context  $context
+ * @param string   $filearea
+ * @param array    $args
+ * @param bool     $forcedownload
+ * @param array    $options
  * @return bool
  */
 
 defined('MOODLE_INTERNAL') || die();
 
 function theme_fordson_get_course_activities() {
-    GLOBAL $CFG, $PAGE, $OUTPUT;
+    global $CFG, $PAGE, $OUTPUT;
     // A copy of block_activity_modules.
     $course = $PAGE->course;
     $content = new stdClass();
     $modinfo = get_fast_modinfo($course);
-    $modfullnames = array();
+    $modfullnames = [];
 
-    $archetypes = array();
+    $archetypes = [];
 
     foreach ($modinfo->cms as $cm) {
         // Exclude activities which are not visible or have no link (=label).
@@ -57,7 +57,10 @@ function theme_fordson_get_course_activities() {
             continue;
         }
         if (!array_key_exists($cm->modname, $archetypes)) {
-            $archetypes[$cm->modname] = plugin_supports('mod', $cm->modname, FEATURE_MOD_ARCHETYPE, MOD_ARCHETYPE_OTHER);
+            $archetypes[$cm->modname] = plugin_supports('mod',
+                $cm->modname,
+                FEATURE_MOD_ARCHETYPE,
+                MOD_ARCHETYPE_OTHER);
         }
         if ($archetypes[$cm->modname] == MOD_ARCHETYPE_RESOURCE) {
             if (!array_key_exists('resources', $modfullnames)) {
@@ -72,9 +75,9 @@ function theme_fordson_get_course_activities() {
     return $modfullnames;
 }
 
-function theme_fordson_strip_html_tags( $text ) {
+function theme_fordson_strip_html_tags($text) {
     $text = preg_replace(
-        array(
+        [
             // Remove invisible content.
             '@<head[^>]*?>.*?</head>@siu',
             '@<style[^>]*?>.*?</style>@siu',
@@ -93,15 +96,15 @@ function theme_fordson_strip_html_tags( $text ) {
             '@</?((form)|(button)|(fieldset)|(legend)|(input))@iu',
             '@</?((label)|(select)|(optgroup)|(option)|(textarea))@iu',
             '@</?((frameset)|(frame)|(iframe))@iu',
-            ),
-        array(
+        ],
+        [
             ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ',
             "\n\$0", "\n\$0", "\n\$0", "\n\$0", "\n\$0", "\n\$0",
             "\n\$0", "\n\$0",
-            ),
+        ],
         $text
-        );
-return strip_tags( $text );
+    );
+    return strip_tags($text);
 }
 
 /**
@@ -117,21 +120,21 @@ function theme_fordson_course_trim_char($str, $n = 500, $endchar = '&#8230;') {
         return $str;
     }
 
-    $str = preg_replace("/\s+/", ' ', str_replace(array("\r\n", "\r", "\n"), ' ', $str));
+    $str = preg_replace("/\s+/", ' ', str_replace(["\r\n", "\r", "\n"], ' ', $str));
     if (strlen($str) <= $n) {
         return $str;
     }
 
     $out = "";
     $small = substr($str, 0, $n);
-    $out = $small.$endchar;
+    $out = $small . $endchar;
     return $out;
 }
 
 function page_location_incourse_themeconfig() {
-    GLOBAL $PAGE;
+    global $PAGE;
     $course = $PAGE->cm;
-    
+
     if ($course) {
         return true;
     } else {

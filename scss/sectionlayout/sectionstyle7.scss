@@ -35,133 +35,133 @@
 //Styling
 
 .course-content ul.section {
-    margin: 1rem;
-    border-top: 7px solid lighten($primary, 25%);
-    border-left: 1px solid $gray-200;
-    border-right: 1px solid $gray-200;
-    border-bottom: 1px solid $gray-200;
-    padding: 1rem;
+  margin: 1rem;
+  border-top: 7px solid lighten($primary, 25%);
+  border-left: 1px solid $gray-200;
+  border-right: 1px solid $gray-200;
+  border-bottom: 1px solid $gray-200;
+  padding: 1rem;
 }
 
 .course-content #section-0 ul.section {
-    border:0;
-    padding:0;
-    margin:0;
+  border: 0;
+  padding: 0;
+  margin: 0;
 }
 
 .course-content ul.topics li.section,
 .course-content ul.weeks li.section {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 .course-content ul.topics li.section .content, .course-content ul.weeks li.section .content {
-    margin: 3rem; 
+  margin: 3rem;
 }
 
 .course-content ul.section {
-    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+  transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
 }
 
 .course-content ul.section:hover {
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 
 li.activity.label {
-    border: initial;
+  border: initial;
 }
 
 div#coursecontrols {
-    border-radius: 0;
-    background-color: $activityhover;
-    border-top: 5px solid lighten($primary, 25%);
+  border-radius: 0;
+  background-color: $activityhover;
+  border-top: 5px solid lighten($primary, 25%);
 }
 
 .section li.activity {
-    border-bottom: 1px dashed $gray-200;
-    font-size: initial;
+  border-bottom: 1px dashed $gray-200;
+  font-size: initial;
 }
 
 .section li.activity:hover {
-    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
-    background-color: $activityhover;
+  transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+  background-color: $activityhover;
 }
 
 .editing .section .activity:hover,
 .editing .section .activity.action-menu-shown {
-    background-color: $activityhover;
+  background-color: $activityhover;
 }
 
 .course-content img.activityicon {
-    height: $activityiconsize;
-    width: $activityiconsize;
-    vertical-align: middle !important;
+  height: $activityiconsize;
+  width: $activityiconsize;
+  vertical-align: middle !important;
 }
 
 .course-content .current::before {
-    border-left: $primary 8px solid;
+  border-left: $primary 8px solid;
 }
 
 .course-content .single-section .section-navigation {
-    padding: 1rem;
-    border-radius: 3px;
-    margin: 0!important;
-    border-top: 7px solid rgba(0,0,0,.2);
-    border-radius: 0;
+  padding: 1rem;
+  border-radius: 3px;
+  margin: 0 !important;
+  border-top: 7px solid rgba(0, 0, 0, .2);
+  border-radius: 0;
 }
 
 .course-content .section-summary {
-    border: 1px solid $gray-300;
+  border: 1px solid $gray-300;
 }
 
 .course-content ul li.section.main:last-child {
-    border-bottom: 1px solid $gray-300;
+  border-bottom: 1px solid $gray-300;
 }
 
 @if $spectrumpreset == 1 {
-    .course-content .section-summary {
-        border: 0; 
-    }
-    .section-go-link.btn.btn-secondary {
-        display: block;
-        margin-top: 2rem;
-    }
-    .course-content .section-summary .section-title {
-        margin: 0;
-    }
-    .course-content .section-summary .summarytext {
-        margin: 0;
-        padding: 1rem;
-        border: 1px solid $gray-200;
-    }
-    .course-content ul.topics li.section, .course-content ul.weeks li.section {
-        padding-top: 0;
-    }
-    .section-summary-activities {
-        width: 85%;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    .course-content ul li.section.main {
-        border-bottom: 0;
-    }
-    .course-content .single-section .section-navigation {
-        padding: 1rem;
-        border-radius: 3px;
-        margin: 0!important;
-        border-top: 0;
-        border-radius: 0;
-    }
+  .course-content .section-summary {
+    border: 0;
+  }
+  .section-go-link.btn.btn-secondary {
+    display: block;
+    margin-top: 2rem;
+  }
+  .course-content .section-summary .section-title {
+    margin: 0;
+  }
+  .course-content .section-summary .summarytext {
+    margin: 0;
+    padding: 1rem;
+    border: 1px solid $gray-200;
+  }
+  .course-content ul.topics li.section, .course-content ul.weeks li.section {
+    padding-top: 0;
+  }
+  .section-summary-activities {
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .course-content ul li.section.main {
+    border-bottom: 0;
+  }
+  .course-content .single-section .section-navigation {
+    padding: 1rem;
+    border-radius: 3px;
+    margin: 0 !important;
+    border-top: 0;
+    border-radius: 0;
+  }
 }
 
 @if $perceptionpreset == 1 {
-    .course-content ul.topics li.section .content, .course-content ul.weeks li.section .content {
-        margin: 0 3rem;
-    }
+  .course-content ul.topics li.section .content, .course-content ul.weeks li.section .content {
+    margin: 0 3rem;
+  }
 }
 
 @media screen and (max-width: 576px) {
-    .course-content ul.topics li.section .content, .course-content ul.weeks li.section .content {
-        margin: 0; 
-    }
+  .course-content ul.topics li.section .content, .course-content ul.weeks li.section .content {
+    margin: 0;
+  }
 }

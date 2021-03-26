@@ -30,12 +30,12 @@ class theme_fordson_format_topics_renderer extends format_topics_renderer {
      * Generate a summary of a section for display on the 'coruse index page'
      *
      * @param stdClass $section The course_section entry from DB
-     * @param stdClass $course The course entry from DB
-     * @param array    $mods (argument not used)
+     * @param stdClass $course  The course entry from DB
+     * @param array    $mods    (argument not used)
      * @return string HTML to output.
      */
     protected function section_summary($section, $course, $mods) {
-    	global $PAGE;
+        global $PAGE;
         $classattr = 'section main section-summary clearfix';
         $linkclasses = '';
 
@@ -44,12 +44,12 @@ class theme_fordson_format_topics_renderer extends format_topics_renderer {
         $completioninfo = new completion_info($course);
         $cancomplete = isloggedin() && !isguestuser();
         $modinfo = get_fast_modinfo($course);
-        
-        $sectionmods = array();
+
+        $sectionmods = [];
         $completioninfo = new completion_info($course);
         if (!empty($modinfo->sections[$section->section])) {
             foreach ($modinfo->sections[$section->section] as $cmid) {
-                
+
                 $thismod = $modinfo->cms[$cmid];
 
                 if ($thismod->modname == 'label') {
@@ -61,8 +61,7 @@ class theme_fordson_format_topics_renderer extends format_topics_renderer {
                     if (isset($sectionmods[$thismod->modname])) {
                         $sectionmods[$thismod->modname]['name'] = $thismod->modplural;
                         $sectionmods[$thismod->modname]['count']++;
-                    }
-                    else {
+                    } else {
                         $sectionmods[$thismod->modname]['name'] = $thismod->modfullname;
                         $sectionmods[$thismod->modname]['count'] = 1;
                     }
@@ -81,29 +80,34 @@ class theme_fordson_format_topics_renderer extends format_topics_renderer {
         if (!$section->visible) {
             $classattr .= ' hidden';
             $linkclasses .= ' dimmed_text';
-        }
-        else if (course_get_format($course)->is_section_current($section)) {
+        } else if (course_get_format($course)->is_section_current($section)) {
             $classattr .= ' current';
         }
 
         $title = get_section_name($course, $section);
         $o = '';
-        $o .= html_writer::start_tag('li', array(
-            'id' => 'section-' . $section->section,
-            'class' => $classattr,
-            'role' => 'region',
-            'aria-label' => $title
-        ));
+        $o .= html_writer::start_tag('li',
+            [
+                'id' => 'section-' . $section->section,
+                'class' => $classattr,
+                'role' => 'region',
+                'aria-label' => $title
+            ]);
 
-        $o .= html_writer::tag('div', '', array(
-            'class' => 'left side'
-        ));
-        $o .= html_writer::tag('div', '', array(
-            'class' => 'right side'
-        ));
-        $o .= html_writer::start_tag('div', array(
-            'class' => 'content'
-        ));
+        $o .= html_writer::tag('div',
+            '',
+            [
+                'class' => 'left side'
+            ]);
+        $o .= html_writer::tag('div',
+            '',
+            [
+                'class' => 'right side'
+            ]);
+        $o .= html_writer::start_tag('div',
+            [
+                'class' => 'content'
+            ]);
         if ($total > 0) {
             $completion = new stdClass;
             $completion->complete = $complete;
@@ -112,7 +116,7 @@ class theme_fordson_format_topics_renderer extends format_topics_renderer {
             $percent = 0;
 
             if ($complete > 0) {
-                $percent = (int)(($complete / $total) * 100);
+                $percent = (int) (($complete / $total) * 100);
             }
 
             $o .= "<div class='progress fordsonsinglepage'>";
@@ -125,23 +129,27 @@ class theme_fordson_format_topics_renderer extends format_topics_renderer {
             $o .= "</div>";
         }
         if ($section->uservisible) {
-            $title = html_writer::tag('a', $title, array(
-                'href' => course_get_url($course, $section->section) ,
-                'class' => $linkclasses
-            ));
+            $title = html_writer::tag('a',
+                $title,
+                [
+                    'href' => course_get_url($course, $section->section),
+                    'class' => $linkclasses
+                ]);
         }
         // Add .sectionname so that fontawesome icon can be applied to this page too.
         $o .= $this->output->heading($title, 3, 'section-title sectionname');
-        $o .= html_writer::start_tag('div', array(
-            'class' => 'summarytext'
-        ));
+        $o .= html_writer::start_tag('div',
+            [
+                'class' => 'summarytext'
+            ]);
 
         $o .= $this->format_summary_text($section);
         $o .= $this->section_activity_summary($section, $course, null);
         $o .= html_writer::end_tag('div');
 
         $context = context_course::instance($course->id);
-        $o .= $this->section_availability_message($section, has_capability('moodle/course:viewhiddensections', $context));
+        $o .= $this->section_availability_message($section,
+            has_capability('moodle/course:viewhiddensections', $context));
 
         $o .= html_writer::end_tag('div'); // Content.
         $o .= html_writer::end_tag('li');
@@ -153,10 +161,10 @@ class theme_fordson_format_topics_renderer extends format_topics_renderer {
      * Generate a summary of the activites in a section
      *
      * @param stdClass $section The course_section entry from DB
-     * @param stdClass $course the course record from DB
-     * @param array    $mods (argument not used)
+     * @param stdClass $course  the course record from DB
+     * @param array    $mods    (argument not used)
      * @return string HTML to output.
-    */ 
+     */
     protected function section_activity_summary($section, $course, $mods) {
         global $PAGE;
 
@@ -166,7 +174,7 @@ class theme_fordson_format_topics_renderer extends format_topics_renderer {
         }
 
         // Generate array with count of activities in this section.
-        $sectionmods = array();
+        $sectionmods = [];
         $total = 0;
         $complete = 0;
         $cancomplete = isloggedin() && !isguestuser();
@@ -183,8 +191,7 @@ class theme_fordson_format_topics_renderer extends format_topics_renderer {
                 if (isset($sectionmods[$thismod->modname])) {
                     $sectionmods[$thismod->modname]['name'] = $thismod->modplural;
                     $sectionmods[$thismod->modname]['count']++;
-                }
-                else {
+                } else {
                     $sectionmods[$thismod->modname]['name'] = $thismod->modfullname;
                     $sectionmods[$thismod->modname]['count'] = 1;
                 }
@@ -204,23 +211,30 @@ class theme_fordson_format_topics_renderer extends format_topics_renderer {
         }
 
         $output = '';
-                // Output Link to Topic modules.
+        // Output Link to Topic modules.
         // $title = get_section_name($course, $section);
         $linktitle = get_string('viewsectionmodules', 'theme_fordson');
-        $output = html_writer::link(new moodle_url('/course/view.php', array('id' => $PAGE->course->id, 'section' => $section->section)) , $linktitle, array('class' => 'section-go-link btn btn-secondary'));
+        $output = html_writer::link(new moodle_url('/course/view.php',
+            ['id' => $PAGE->course->id, 'section' => $section->section]),
+            $linktitle,
+            ['class' => 'section-go-link btn btn-secondary']);
 
         // Output section activities summary
-        $output .= html_writer::start_tag('div', array(
-            'class' => 'section-summary-activities'
-        ));
+        $output .= html_writer::start_tag('div',
+            [
+                'class' => 'section-summary-activities'
+            ]);
 
-        $output .= html_writer::tag('span', get_string('section_mods', 'theme_fordson') , array(
-            'class' => 'activity-count'
-        ));
-        foreach ($sectionmods as $mod) {
-            $output .= html_writer::start_tag('span', array(
+        $output .= html_writer::tag('span',
+            get_string('section_mods', 'theme_fordson'),
+            [
                 'class' => 'activity-count'
-            ));
+            ]);
+        foreach ($sectionmods as $mod) {
+            $output .= html_writer::start_tag('span',
+                [
+                    'class' => 'activity-count'
+                ]);
             $output .= $mod['name'] . ': ' . $mod['count'];
             $output .= html_writer::end_tag('span');
         }
@@ -231,11 +245,13 @@ class theme_fordson_format_topics_renderer extends format_topics_renderer {
             $a->complete = $complete;
             $a->total = $total;
             $output .= '<br>';
-            $output .= html_writer::tag('span', get_string('progresstotal', 'completion', $a) , array(
-                'class' => 'activity-count'
-            ));
+            $output .= html_writer::tag('span',
+                get_string('progresstotal', 'completion', $a),
+                [
+                    'class' => 'activity-count'
+                ]);
         }
-        
+
 
         // End Willian Mono.
 

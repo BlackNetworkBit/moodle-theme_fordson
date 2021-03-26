@@ -35,252 +35,253 @@
 //Styling
 
 .course-content li.current .content ul.section {
-    border-left: 6px solid $dpsaccentcolor;
+  border-left: 6px solid $dpsaccentcolor;
 }
 
 .course-content .current::before {
-    border-left: 0;
+  border-left: 0;
 }
 
 .course-content ul.topics li.section .summary,
 .course-content ul.weeks li.section .summary,
 .course-content ul.topics li.section .content > .availabilityinfo,
 .course-content ul.weeks li.section .content > .availabilityinfo {
-    margin: 0;
-    padding: 1rem;
-    background-color: $gray-100;
+  margin: 0;
+  padding: 1rem;
+  background-color: $gray-100;
 }
 
 .course-content .section-summary {
-    border: 0;
+  border: 0;
 }
 
 .course-content .section-summary .summarytext {
-    padding: 2px 5px 2px 5px;
-    background: #fff;
-    margin: 0 !important;
+  padding: 2px 5px 2px 5px;
+  background: #fff;
+  margin: 0 !important;
 }
 
 .section_availability {
-    background-color: $gray-200;
-    padding: .25rem;
+  background-color: $gray-200;
+  padding: .25rem;
 }
 
 .single-section h3.sectionname {
-    text-align: center;
-    clear: both;
-    display: block;
+  text-align: center;
+  clear: both;
+  display: block;
 }
 
 h3.sectionname {
-    color: $light;
-    padding: $spacer;
-    background-color: $dark;
-    display: inline-block;
-    border-right: 1rem solid $primary;
-    margin-bottom: 0 !important;
+  color: $light;
+  padding: $spacer;
+  background-color: $dark;
+  display: inline-block;
+  border-right: 1rem solid $primary;
+  margin-bottom: 0 !important;
 }
 
 h3.section-title.sectionname {
-    margin: 0 !important;
+  margin: 0 !important;
 }
 
 h3.sectionname a {
-    color: $white;
+  color: $white;
 }
 
 .course-content ul.topics li.section .content,
 .course-content ul.weeks li.section .content {
-    border: 0;
-    margin-top: 2rem;
-    padding-top: 0;
+  border: 0;
+  margin-top: 2rem;
+  padding-top: 0;
 }
 
 .editing .course-content ul.topics li.section .content,
 .editing .course-content ul.weeks li.section .content {
-    border: 1px dotted $gray-500;
+  border: 1px dotted $gray-500;
 }
 
 .course-content ul li.section.main {
-    border-bottom: 0;
+  border-bottom: 0;
 }
 
 li.current h3.sectionname {
-    background-color: $dpsaccentcolor;
+  background-color: $dpsaccentcolor;
 }
 
 li.section.hidden {
-    background-color: initial;
+  background-color: initial;
 }
 
 .course-content ul li.section.hidden .content {
-    background-color: $gray-300;
+  background-color: $gray-300;
 }
 
 li.section.hidden h3.sectionname {
-    background-color: $gray-300;
+  background-color: $gray-300;
 }
 
 .course-content ul.section {
-    margin: 0;
-    padding: 1rem;
-    background-color: $sectionactivitybkg;
+  margin: 0;
+  padding: 1rem;
+  background-color: $sectionactivitybkg;
 }
 
 .course-content .hidden ul.section {
-    background-color: $gray-300;
+  background-color: $gray-300;
 }
 
 .path-mod-assign [data-region="grading-navigation"] {
-    background-color: #fff;
+  background-color: #fff;
 }
 
 div#changenumsections {
-    margin-top: 3rem;
+  margin-top: 3rem;
 }
 
 .section-modchooser {
-    padding: 1rem;
+  padding: 1rem;
 }
 
-span.section-modchooser-link{
-    background-color: $gray-200;
-    padding: .5rem;
+span.section-modchooser-link {
+  background-color: $gray-200;
+  padding: .5rem;
 }
 
 a.add-sections {
-    background-color: $gray-200;
-    padding: 10px;
+  background-color: $gray-200;
+  padding: 10px;
 }
 
 li#section-0.fordsoncourseformat .content, li#section-0.fordsoncourseformat h3.sectionname {
-    border: 0;
+  border: 0;
 }
 
 .course-content ul.collapsibletopics .fordsoncourseformat .content {
-    padding: 1rem;
-    margin: 1rem 0;
-    border: 1px solid $gray-300;
+  padding: 1rem;
+  margin: 1rem 0;
+  border: 1px solid $gray-300;
 }
 
 .course-content ul li.section.main.fordsoncourseformat {
-    margin: 4rem 0;
+  margin: 4rem 0;
 }
 
 .course-content ul.collapsibletopics li.section ul.section {
-    background-color: $gray-100;
+  background-color: $gray-100;
 }
+
 .course-content ul.collapsibletopics li#section-0.fordsoncourseformat ul.section {
-    background-color: initial;
+  background-color: initial;
 }
 
 .section_availability {
-    background-color: initial;
+  background-color: initial;
 }
 
 // Activity Styling.
 
 ul {
-    padding-left: 1rem;
-    padding-right: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 li.activity.label {
-    border: initial;
+  border: initial;
 }
 
 .section li.activity {
-    padding: calc($spacer - 50%);
-    border-bottom: 1px dashed $gray-300;
+  padding: calc($spacer - 50%);
+  border-bottom: 1px dashed $gray-300;
 }
 
 .section li.activity:hover {
-    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
-    background-color: $activityhover;
+  transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+  background-color: $activityhover;
 }
 
 .section li.activity.modtype_label.label:hover {
-    transition: none;
-    background-color: inherit;
+  transition: none;
+  background-color: inherit;
 }
 
 .editing .section .activity:hover,
 .editing .section .activity.action-menu-shown {
-    background-color: $activityhover;
+  background-color: $activityhover;
 }
 
 .course-content img.activityicon {
-    height: $activityiconsize;
-    width: $activityiconsize;
-    vertical-align: middle !important;
+  height: $activityiconsize;
+  width: $activityiconsize;
+  vertical-align: middle !important;
 }
 
 span.instancename {
-    margin-left: 1rem;
+  margin-left: 1rem;
 }
 
 .region_main_settings_menu_proxy {
-    float: initial;
+  float: initial;
 }
 
 
 @if $spectrumpreset == 1 {
-    .course-content .section-summary {
-        border: 0; 
-    }
-    .section-go-link.btn.btn-secondary {
-        display: block;
-        margin-top: 2rem;
-    }
-    .course-content .section-summary .section-title {
-        margin: 0;
-    }
-    .course-content .section-summary .summarytext {
-        margin: 0;
-        padding: 1rem;
-        border: 1px solid $gray-200;
-    }
-    .course-content ul.topics li.section, .course-content ul.weeks li.section {
-        padding-top: 0;
-    }
-    h3.sectionname {
-        background-color: $spectrum-base;
-    }
-    h3.sectionname.dimmed_text {
-        background-color: $gray-400;
-    }
-    .section-summary-activities {
-        width: 85%;
-        margin-left: auto;
-        margin-right: auto;
-    }
+  .course-content .section-summary {
+    border: 0;
+  }
+  .section-go-link.btn.btn-secondary {
+    display: block;
+    margin-top: 2rem;
+  }
+  .course-content .section-summary .section-title {
+    margin: 0;
+  }
+  .course-content .section-summary .summarytext {
+    margin: 0;
+    padding: 1rem;
+    border: 1px solid $gray-200;
+  }
+  .course-content ul.topics li.section, .course-content ul.weeks li.section {
+    padding-top: 0;
+  }
+  h3.sectionname {
+    background-color: $spectrum-base;
+  }
+  h3.sectionname.dimmed_text {
+    background-color: $gray-400;
+  }
+  .section-summary-activities {
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
 }
 
 @if $perceptionpreset == 1 {
-    .editing .course-content ul.topics li.section .content, .editing .course-content ul.weeks li.section .content {
-        border:0;
-    }
-    .course-content ul li.section.hidden .content {
-        background-color: transparent;
-    }
-    h3.sectionname {
-        color: $dark;
-        padding: $spacer;
-        background-color: $perception-base;
-        display: inline-block;
-        border-right: 1rem solid $primary;
-        margin-bottom: 0 !important;
-    }
+  .editing .course-content ul.topics li.section .content, .editing .course-content ul.weeks li.section .content {
+    border: 0;
+  }
+  .course-content ul li.section.hidden .content {
+    background-color: transparent;
+  }
+  h3.sectionname {
+    color: $dark;
+    padding: $spacer;
+    background-color: $perception-base;
+    display: inline-block;
+    border-right: 1rem solid $primary;
+    margin-bottom: 0 !important;
+  }
 
-    h3.section-title.sectionname {
-        margin: 0 !important;
-    }
+  h3.section-title.sectionname {
+    margin: 0 !important;
+  }
 
-    h3.sectionname a {
-        color: $dark;
-    }
-    li.section.hidden h3.sectionname {
-        background-color: $perception-base;
-    }
+  h3.sectionname a {
+    color: $dark;
+  }
+  li.section.hidden h3.sectionname {
+    background-color: $perception-base;
+  }
 }

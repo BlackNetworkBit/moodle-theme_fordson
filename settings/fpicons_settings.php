@@ -15,13 +15,13 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
-* Social networking settings page file.
-*
-* @package    theme_fordson
-* @copyright  2016 Chris Kenniburg
-* 
-* @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
-*/
+ * Social networking settings page file.
+ *
+ * @package    theme_fordson
+ * @copyright  2016 Chris Kenniburg
+ *
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
 
 defined('MOODLE_INTERNAL') || die();
 
@@ -38,9 +38,9 @@ $page->add($setting);
 // Icon width setting.
 $name = 'theme_fordson/iconwidth';
 $title = get_string('iconwidth', 'theme_fordson');
-$description = get_string('iconwidth_desc', 'theme_fordson');;
+$description = get_string('iconwidth_desc', 'theme_fordson');
 $default = '100px';
-$choices = array(
+$choices = [
     '75px' => '75px',
     '85px' => '85px',
     '95px' => '95px',
@@ -55,7 +55,7 @@ $choices = array(
     '140px' => '140px',
     '145px' => '145px',
     '150px' => '150px',
-);
+];
 $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
@@ -87,7 +87,7 @@ $page->add($setting);
 $name = 'theme_fordson/createbuttonurl';
 $title = get_string('naviconbuttonurl', 'theme_fordson');
 $description = get_string('naviconbuttonurldesc', 'theme_fordson');
-$default =  $CFG->wwwroot.'/course/edit.php?category=1';
+$default = $CFG->wwwroot . '/course/edit.php?category=1';
 $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL);
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
@@ -152,19 +152,19 @@ $page->add($setting);
 $name = 'theme_fordson/nav1buttonurl';
 $title = get_string('naviconbuttonurl', 'theme_fordson');
 $description = get_string('naviconbuttonurldesc', 'theme_fordson');
-$default =  $CFG->wwwroot.'/my/';
+$default = $CFG->wwwroot . '/my/';
 $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL);
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
 $name = 'theme_fordson/nav1target';
-$title = get_string('marketingurltarget' , 'theme_fordson');
+$title = get_string('marketingurltarget', 'theme_fordson');
 $description = get_string('marketingurltargetdesc', 'theme_fordson');
 $target1 = get_string('marketingurltargetself', 'theme_fordson');
 $target2 = get_string('marketingurltargetnew', 'theme_fordson');
 $target3 = get_string('marketingurltargetparent', 'theme_fordson');
 $default = 'target1';
-$choices = array('_self'=>$target1, '_blank'=>$target2, '_parent'=>$target3);
+$choices = ['_self' => $target1, '_blank' => $target2, '_parent' => $target3];
 $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
@@ -195,19 +195,19 @@ $page->add($setting);
 $name = 'theme_fordson/nav2buttonurl';
 $title = get_string('naviconbuttonurl', 'theme_fordson');
 $description = get_string('naviconbuttonurldesc', 'theme_fordson');
-$default =  $CFG->wwwroot.'/calendar/view.php?view=month';
+$default = $CFG->wwwroot . '/calendar/view.php?view=month';
 $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL);
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
 $name = 'theme_fordson/nav2target';
-$title = get_string('marketingurltarget' , 'theme_fordson');
+$title = get_string('marketingurltarget', 'theme_fordson');
 $description = get_string('marketingurltargetdesc', 'theme_fordson');
 $target1 = get_string('marketingurltargetself', 'theme_fordson');
 $target2 = get_string('marketingurltargetnew', 'theme_fordson');
 $target3 = get_string('marketingurltargetparent', 'theme_fordson');
 $default = 'target1';
-$choices = array('_self'=>$target1, '_blank'=>$target2, '_parent'=>$target3);
+$choices = ['_self' => $target1, '_blank' => $target2, '_parent' => $target3];
 $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
@@ -238,19 +238,19 @@ $page->add($setting);
 $name = 'theme_fordson/nav3buttonurl';
 $title = get_string('naviconbuttonurl', 'theme_fordson');
 $description = get_string('naviconbuttonurldesc', 'theme_fordson');
-$default =  $CFG->wwwroot.'/badges/mybadges.php';
+$default = $CFG->wwwroot . '/badges/mybadges.php';
 $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL);
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
 $name = 'theme_fordson/nav3target';
-$title = get_string('marketingurltarget' , 'theme_fordson');
+$title = get_string('marketingurltarget', 'theme_fordson');
 $description = get_string('marketingurltargetdesc', 'theme_fordson');
 $target1 = get_string('marketingurltargetself', 'theme_fordson');
 $target2 = get_string('marketingurltargetnew', 'theme_fordson');
 $target3 = get_string('marketingurltargetparent', 'theme_fordson');
 $default = 'target1';
-$choices = array('_self'=>$target1, '_blank'=>$target2, '_parent'=>$target3);
+$choices = ['_self' => $target1, '_blank' => $target2, '_parent' => $target3];
 $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
@@ -281,19 +281,19 @@ $page->add($setting);
 $name = 'theme_fordson/nav4buttonurl';
 $title = get_string('naviconbuttonurl', 'theme_fordson');
 $description = get_string('naviconbuttonurldesc', 'theme_fordson');
-$default =  $CFG->wwwroot.'/course/';
+$default = $CFG->wwwroot . '/course/';
 $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL);
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
 $name = 'theme_fordson/nav4target';
-$title = get_string('marketingurltarget' , 'theme_fordson');
+$title = get_string('marketingurltarget', 'theme_fordson');
 $description = get_string('marketingurltargetdesc', 'theme_fordson');
 $target1 = get_string('marketingurltargetself', 'theme_fordson');
 $target2 = get_string('marketingurltargetnew', 'theme_fordson');
 $target3 = get_string('marketingurltargetparent', 'theme_fordson');
 $default = 'target1';
-$choices = array('_self'=>$target1, '_blank'=>$target2, '_parent'=>$target3);
+$choices = ['_self' => $target1, '_blank' => $target2, '_parent' => $target3];
 $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
@@ -330,13 +330,13 @@ $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
 $name = 'theme_fordson/nav5target';
-$title = get_string('marketingurltarget' , 'theme_fordson');
+$title = get_string('marketingurltarget', 'theme_fordson');
 $description = get_string('marketingurltargetdesc', 'theme_fordson');
 $target1 = get_string('marketingurltargetself', 'theme_fordson');
 $target2 = get_string('marketingurltargetnew', 'theme_fordson');
 $target3 = get_string('marketingurltargetparent', 'theme_fordson');
 $default = 'target1';
-$choices = array('_self'=>$target1, '_blank'=>$target2, '_parent'=>$target3);
+$choices = ['_self' => $target1, '_blank' => $target2, '_parent' => $target3];
 $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
@@ -373,13 +373,13 @@ $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
 $name = 'theme_fordson/nav6target';
-$title = get_string('marketingurltarget' , 'theme_fordson');
+$title = get_string('marketingurltarget', 'theme_fordson');
 $description = get_string('marketingurltargetdesc', 'theme_fordson');
 $target1 = get_string('marketingurltargetself', 'theme_fordson');
 $target2 = get_string('marketingurltargetnew', 'theme_fordson');
 $target3 = get_string('marketingurltargetparent', 'theme_fordson');
 $default = 'target1';
-$choices = array('_self'=>$target1, '_blank'=>$target2, '_parent'=>$target3);
+$choices = ['_self' => $target1, '_blank' => $target2, '_parent' => $target3];
 $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
@@ -416,13 +416,13 @@ $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
 $name = 'theme_fordson/nav7target';
-$title = get_string('marketingurltarget' , 'theme_fordson');
+$title = get_string('marketingurltarget', 'theme_fordson');
 $description = get_string('marketingurltargetdesc', 'theme_fordson');
 $target1 = get_string('marketingurltargetself', 'theme_fordson');
 $target2 = get_string('marketingurltargetnew', 'theme_fordson');
 $target3 = get_string('marketingurltargetparent', 'theme_fordson');
 $default = 'target1';
-$choices = array('_self'=>$target1, '_blank'=>$target2, '_parent'=>$target3);
+$choices = ['_self' => $target1, '_blank' => $target2, '_parent' => $target3];
 $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
@@ -459,13 +459,13 @@ $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
 $name = 'theme_fordson/nav8target';
-$title = get_string('marketingurltarget' , 'theme_fordson');
+$title = get_string('marketingurltarget', 'theme_fordson');
 $description = get_string('marketingurltargetdesc', 'theme_fordson');
 $target1 = get_string('marketingurltargetself', 'theme_fordson');
 $target2 = get_string('marketingurltargetnew', 'theme_fordson');
 $target3 = get_string('marketingurltargetparent', 'theme_fordson');
 $default = 'target1';
-$choices = array('_self'=>$target1, '_blank'=>$target2, '_parent'=>$target3);
+$choices = ['_self' => $target1, '_blank' => $target2, '_parent' => $target3];
 $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);

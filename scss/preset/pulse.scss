@@ -5,7 +5,7 @@
 // Color system
 //
 
-$white:    #fff !default;
+$white: #fff !default;
 $gray-100: #fafafa !default;
 $gray-200: #F9F8FC !default;
 $gray-300: #EDEDED !default;
@@ -15,27 +15,27 @@ $gray-600: #868e96 !default;
 $gray-700: #444 !default;
 $gray-800: #343a40 !default;
 $gray-900: #17141F !default;
-$black:    #000 !default;
+$black: #000 !default;
 
-$blue:    #007bff !default;
-$indigo:  #6610f2 !default;
-$purple:  #593196 !default;
-$pink:    #e83e8c !default;
-$red:     #FC3939 !default;
-$orange:  #fd7e14 !default;
-$yellow:  #EFA31D !default;
-$green:   #13B955 !default;
-$teal:    #20c997 !default;
-$cyan:    #009CDC !default;
+$blue: #007bff !default;
+$indigo: #6610f2 !default;
+$purple: #593196 !default;
+$pink: #e83e8c !default;
+$red: #FC3939 !default;
+$orange: #fd7e14 !default;
+$yellow: #EFA31D !default;
+$green: #13B955 !default;
+$teal: #20c997 !default;
+$cyan: #009CDC !default;
 
-$primary:       $purple !default;
-$secondary:     #A991D4 !default;
-$success:       $green !default;
-$info:          $cyan !default;
-$warning:       $yellow !default;
-$danger:        $red !default;
-$light:         $gray-200 !default;
-$dark:          $gray-900 !default;
+$primary: $purple !default;
+$secondary: #A991D4 !default;
+$success: $green !default;
+$info: $cyan !default;
+$warning: $yellow !default;
+$danger: $red !default;
+$light: $gray-200 !default;
+$dark: $gray-900 !default;
 
 // Options
 
@@ -43,45 +43,45 @@ $enable-rounded: false !default;
 
 // Body
 
-$body-color:                $gray-700 !default;
+$body-color: $gray-700 !default;
 
 // Links
 
-$link-hover-color:          $primary !default;
+$link-hover-color: $primary !default;
 
 // Fonts
 
-$font-size-base:              0.875rem !default;
+$font-size-base: 0.875rem !default;
 
 // Tables
 
-$table-border-color:          rgba(0, 0, 0, 0.05) !default;
+$table-border-color: rgba(0, 0, 0, 0.05) !default;
 
 // Forms
 
-$input-focus-border-color:              $primary !default;
+$input-focus-border-color: $primary !default;
 
 // Dropdowns
 
-$dropdown-link-color:               $gray-700;
-$dropdown-link-hover-color:         $primary;
-$dropdown-link-hover-bg:            $gray-300;
+$dropdown-link-color: $gray-700;
+$dropdown-link-hover-color: $primary;
+$dropdown-link-hover-bg: $gray-300;
 
 // Navs
 
-$nav-tabs-border-color:             $gray-300 !default;
-$nav-tabs-link-hover-border-color:  $primary !default;
+$nav-tabs-border-color: $gray-300 !default;
+$nav-tabs-link-hover-border-color: $primary !default;
 
 // Navbar
 
-$navbar-padding-y:                  1.2rem !default;
+$navbar-padding-y: 1.2rem !default;
 
-$navbar-dark-hover-color:           rgba($white,.9) !default;
-$navbar-dark-active-color:          rgba($white,.9) !default;
+$navbar-dark-hover-color: rgba($white, .9) !default;
+$navbar-dark-active-color: rgba($white, .9) !default;
 
-$navbar-light-color:                rgba($black,.4) !default;
-$navbar-light-active-color:         rgba($black,.7) !default;
-$navbar-light-disabled-color:       rgba($black,.2) !default;
+$navbar-light-color: rgba($black, .4) !default;
+$navbar-light-active-color: rgba($black, .7) !default;
+$navbar-light-disabled-color: rgba($black, .2) !default;
 
 // Breadcrumbs
 
@@ -91,19 +91,19 @@ $breadcrumb-text-color: #ffffff !default;
 
 // Progress bars
 
-$progress-bg:                       $gray-300 !default;
-$progress-bar-bg:                   $primary !default;
+$progress-bg: $gray-300 !default;
+$progress-bar-bg: $primary !default;
 
 // List group
 
-$list-group-bg:                     $gray-900;
-$list-group-border-color:           transparent;
+$list-group-bg: $gray-900;
+$list-group-border-color: transparent;
 
-$list-group-hover-bg:               lighten($list-group-bg, 10%);
-$list-group-active-color:           $white;
-$list-group-active-bg:              $list-group-bg;
+$list-group-hover-bg: lighten($list-group-bg, 10%);
+$list-group-active-color: $white;
+$list-group-active-bg: $list-group-bg;
 
-$list-group-disabled-color:         lighten($list-group-bg, 30%);
+$list-group-disabled-color: lighten($list-group-bg, 30%);
 
 
 // Import FontAwesome.
@@ -193,7 +193,7 @@ $list-group-disabled-color:         lighten($list-group-bg, 30%);
 // Forms =======================================================================
 
 .form-control:focus {
-  box-shadow: 0 0 5px rgba(100,65,164,.4);
+  box-shadow: 0 0 5px rgba(100, 65, 164, .4);
 }
 
 // Navs ========================================================================
@@ -236,8 +236,8 @@ $list-group-disabled-color:         lighten($list-group-bg, 30%);
 }
 
 .progress_bar_completed {
-    background-color: $gray-400;
-    text-align: right;
+  background-color: $gray-400;
+  text-align: right;
 }
 
 // Containers ==================================================================
@@ -270,26 +270,27 @@ $list-group-disabled-color:         lighten($list-group-bg, 30%);
 
 // Fordson Styling
 .dropdown-item a {
-    color: initial;
+  color: initial;
 }
 
 .list-group-item-action:active {
-    color: #444;
-    background-color: initial;
+  color: #444;
+  background-color: initial;
 }
 
 div#blockslider {
-    padding-top: 2rem!important;
+  padding-top: 2rem !important;
 }
 
 .section-go-link {
-    padding: .25rem;
-    margin: .5rem;
-    background-color: $gray-100;
-    display: inline-block;
-    border: 1px solid $gray-300;
+  padding: .25rem;
+  margin: .5rem;
+  background-color: $gray-100;
+  display: inline-block;
+  border: 1px solid $gray-300;
 }
+
 #region-main {
-    border: 0;
-    background-color: transparent;
+  border: 0;
+  background-color: transparent;
 }

@@ -53,7 +53,7 @@ $string['blockdisplay'] = 'Block Display Location Options';
 $string['blockdisplay_desc'] = 'Choose how to display blocks on the homepage and course pages.  Fordson adds a 3 column collapsible block panel that can be hidden by the user.  Choose the Boost default option to use a single right side column for blocks.  The Boost default option also moves the Add a Block button back to the Nav Drawer on the left of the page.  We also recommend using "Single Column Boost Default" when using any of the Boost page layouts from the settings above.';
 $string['blockdisplay_off'] = 'Single Column Boost Default';
 $string['blockdisplay_on'] = 'Three Column Fordson Default';
-$string['ilearnsecurebrowser'] ='This Quiz is secured with iLearn Secure Browser (A Chromebook using the iLearn app must be used to attempt this quiz)';
+$string['ilearnsecurebrowser'] = 'This Quiz is secured with iLearn Secure Browser (A Chromebook using the iLearn app must be used to attempt this quiz)';
 
 // Presets Settings.
 $string['presets_settings'] = 'Presets';
@@ -159,7 +159,7 @@ $string['brandemail'] = 'Organization Email';
 $string['brandemaildesc'] = 'Email address for organization that appears in footer.';
 $string['footerheadingsub'] = 'Customize the footer of the homepage';
 $string['footerdesc'] = 'The items below allow you provide branding to the theme footer.';
-$string['footerheadingsocial'] ='Social Icons';
+$string['footerheadingsocial'] = 'Social Icons';
 $string['socialnetworks'] = 'Social Networks';
 $string['facebook'] = 'Facebook URL';
 $string['facebookdesc'] = 'Enter the URL of your Facebook page. (i.e http://www.facebook.com/)';

@@ -66,63 +66,64 @@
 
         <div id="learningcontent">
 
-        {{#headerlogo}}
-            <div class="headerlogo">
-                <img src="{{{ headerlogo }}}" class="img-fluid" alt="Responsive image">
-            </div>
-        {{/headerlogo}}
-        {{>theme_fordson/blockspanelslider}}
-        {{#hasslideshowpages}}
-            {{{ output.fp_slideshow }}}
-        {{/hasslideshowpages}}
-        {{{ output.full_header }}}
-
-        <div id="page-content" class="row pb-3">
-            <div id="region-main-box" class="col-12">
-                {{#hasregionmainsettingsmenu}}
-                <div id="region-main-settings-menu" class="d-print-none {{#hasblocks}}has-blocks{{/hasblocks}}">
-                    <div> {{{ output.region_main_settings_menu }}} </div>
+            {{#headerlogo}}
+                <div class="headerlogo">
+                    <img src="{{{ headerlogo }}}" class="img-fluid" alt="Responsive image">
                 </div>
-                {{/hasregionmainsettingsmenu}}
-                <section id="region-main" {{#hasblocks}}class="has-blocks mb-3"{{/hasblocks}}>
+            {{/headerlogo}}
+            {{>theme_fordson/blockspanelslider}}
+            {{#hasslideshowpages}}
+                {{{ output.fp_slideshow }}}
+            {{/hasslideshowpages}}
+            {{{ output.full_header }}}
 
-                            {{#hasregionmainsettingsmenu}}
-                                <div class="region_main_settings_menu_proxy"></div>
-                            {{/hasregionmainsettingsmenu}}
-                            {{{ output.course_content_header }}}
-                            {{{ enrolform }}}
-                            {{{ output.fp_wonderbox }}}
-                            {{{ output.main_content }}}
-                            {{{ output.fp_marketingtiles }}}
-                            {{{ output.course_content_footer }}}
+            <div id="page-content" class="row pb-3">
+                <div id="region-main-box" class="col-12">
+                    {{#hasregionmainsettingsmenu}}
+                        <div id="region-main-settings-menu" class="d-print-none {{#hasblocks}}has-blocks{{/hasblocks}}">
+                            <div> {{{ output.region_main_settings_menu }}} </div>
+                        </div>
+                    {{/hasregionmainsettingsmenu}}
+                    <section id="region-main" {{#hasblocks}}class="has-blocks mb-3"{{/hasblocks}}>
 
-                </section>
-                {{#hasblocks}}
-                    <section data-region="blocks-column" class="d-print-none">
-                        {{{ sidepreblocks }}}
+                        {{#hasregionmainsettingsmenu}}
+                            <div class="region_main_settings_menu_proxy"></div>
+                        {{/hasregionmainsettingsmenu}}
+                        {{{ output.course_content_header }}}
+                        {{{ enrolform }}}
+                        {{{ output.fp_wonderbox }}}
+                        {{{ output.main_content }}}
+                        {{{ output.fp_marketingtiles }}}
+                        {{{ output.course_content_footer }}}
+
                     </section>
-                {{/hasblocks}}
+                    {{#hasblocks}}
+                        <section data-region="blocks-column" class="d-print-none">
+                            {{{ sidepreblocks }}}
+                        </section>
+                    {{/hasblocks}}
+                </div>
             </div>
         </div>
     </div>
+    {{{ output.standard_after_main_region_html }}}
+    {{#hasfhsdrawer}}
+        {{> theme_boost/nav-drawer }}
+    {{/hasfhsdrawer}}
+
+    {{> theme_fordson/footer }}
+
 </div>
-{{{ output.standard_after_main_region_html }}}
-{{#hasfhsdrawer}}
-{{> theme_boost/nav-drawer }}
-{{/hasfhsdrawer}}
 
-{{> theme_fordson/footer }}
-
-</div>
-
-<a href="#" id="back-to-top" class="btn btn-primary btn-lg" role="button" title="{{#str}}backtotop, theme_fordson{{/str}}"><i class="fa fa-chevron-circle-up" aria-hidden="true"></i></a>
+<a href="#" id="back-to-top" class="btn btn-primary btn-lg" role="button"
+   title="{{#str}}backtotop, theme_fordson{{/str}}"><i class="fa fa-chevron-circle-up" aria-hidden="true"></i></a>
 
 </body>
 </html>
 {{#js}}
-require(['theme_boost/loader']);
-require(['jquery','theme_boost/bootstrap/tooltip'], function($){$('[data-tooltip="tooltip"]').tooltip()});
-require(['theme_boost/drawer'], function(mod) {
+    require(['theme_boost/loader']);
+    require(['jquery','theme_boost/bootstrap/tooltip'], function($){$('[data-tooltip="tooltip"]').tooltip()});
+    require(['theme_boost/drawer'], function(mod) {
     mod.init();
-});
+    });
 {{/js}}

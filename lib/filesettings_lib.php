@@ -28,17 +28,17 @@
  *
  * @param stdClass $course
  * @param stdClass $cm
- * @param context $context
- * @param string $filearea
- * @param array $args
- * @param bool $forcedownload
- * @param array $options
+ * @param context  $context
+ * @param string   $filearea
+ * @param array    $args
+ * @param bool     $forcedownload
+ * @param array    $options
  * @return bool
  */
 
 defined('MOODLE_INTERNAL') || die();
 
-function theme_fordson_pluginfile($course, $cm, $context, $filearea, $args, $forcedownload, array $options = array()) {
+function theme_fordson_pluginfile($course, $cm, $context, $filearea, $args, $forcedownload, array $options = []) {
     static $theme;
     if (empty($theme)) {
         $theme = theme_config::load('fordson');
@@ -101,10 +101,10 @@ function theme_fordson_pluginfile($course, $cm, $context, $filearea, $args, $for
  *
  * This keeps the logic out of the layout files.
  *
- * @param string $setting bring the required setting into the function
- * @param bool $format
- * @param string $setting
- * @param array $theme
+ * @param string   $setting bring the required setting into the function
+ * @param bool     $format
+ * @param string   $setting
+ * @param array    $theme
  * @param stdclass $CFG
  * @return string
  */
@@ -122,7 +122,7 @@ function theme_fordson_get_setting($setting, $format = false) {
     } else if ($format === 'format_text') {
         return format_text($theme->settings->$setting, FORMAT_PLAIN);
     } else if ($format === 'format_html') {
-        return format_text($theme->settings->$setting, FORMAT_HTML, array('trusted' => true, 'noclean' => true));
+        return format_text($theme->settings->$setting, FORMAT_HTML, ['trusted' => true, 'noclean' => true]);
     } else {
         return format_string($theme->settings->$setting);
     }

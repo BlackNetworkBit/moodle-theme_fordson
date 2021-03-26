@@ -34,142 +34,144 @@
 
 //Styling
 .course-content ul.topics li.section.current .content, .course-content ul.weeks li.section.current .content {
-        border-top: 25px solid $dpsaccentcolor;
+  border-top: 25px solid $dpsaccentcolor;
 }
 
 .course-content .content ul.section {
-    background-color: $gray-100;
+  background-color: $gray-100;
 }
 
 .course-content .current::before {
-    border-left: 0;
+  border-left: 0;
 }
 
 .course-content ul.topics li.section .summary,
 .course-content ul.weeks li.section .summary,
 .course-content ul.topics li.section .content > .availabilityinfo,
 .course-content ul.weeks li.section .content > .availabilityinfo {
-    margin: 0;
-    padding: 1rem;
+  margin: 0;
+  padding: 1rem;
 }
 
-.course-content ul.topics li.section .content, 
+.course-content ul.topics li.section .content,
 .course-content ul.weeks li.section .content {
-    margin: 0;
-    padding: 1rem;
-    border-bottom: 20px solid $gray-600;
+  margin: 0;
+  padding: 1rem;
+  border-bottom: 20px solid $gray-600;
 }
 
 
 .course-content ul.topics li.section, .course-content ul.weeks li.section {
-    padding-top: 0;
-    padding-bottom: 0;
-    margin-bottom: 3rem;
-    border-left: 1px solid $gray-200;
-    border-right: 1px solid $gray-200;
-    border-top: 1px solid $gray-200;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-bottom: 3rem;
+  border-left: 1px solid $gray-200;
+  border-right: 1px solid $gray-200;
+  border-top: 1px solid $gray-200;
 }
 
 .course-content ul li.section.main {
-    border-bottom: 0;
-    margin-top: 0;
-    padding-top: 0;
+  border-bottom: 0;
+  margin-top: 0;
+  padding-top: 0;
 }
 
 li.section.hidden {
-    background-color: initial;
+  background-color: initial;
 }
 
 .course-content ul li.section.hidden .content {
-    background-color: $gray-300;
+  background-color: $gray-300;
 }
 
 .course-content ul.section {
-    margin: 0;
-    padding: 1rem;
-    background-color: $sectionactivitybkg;
+  margin: 0;
+  padding: 1rem;
+  background-color: $sectionactivitybkg;
 }
 
 .course-content .hidden ul.section {
-    background-color: $gray-300;
+  background-color: $gray-300;
 }
 
 
 .path-mod-assign [data-region="grading-navigation"] {
-    background-color: #fff;
+  background-color: #fff;
 }
 
 div#changenumsections {
-    margin-top: 3rem;
+  margin-top: 3rem;
 }
 
 .section-modchooser {
-    padding: 1rem;
+  padding: 1rem;
 }
 
-span.section-modchooser-link{
-    background-color: $gray-200;
-    padding: .5rem;
+span.section-modchooser-link {
+  background-color: $gray-200;
+  padding: .5rem;
 
 }
 
 a.add-sections {
-    background-color: $gray-200;
-    padding: 10px;
-    border-radius: $border-radius;
+  background-color: $gray-200;
+  padding: 10px;
+  border-radius: $border-radius;
 }
 
 .course-content ul.collapsibletopics li#section-0.fordsoncourseformat ul.section {
-    background-color: initial;
+  background-color: initial;
 }
+
 .course-content ul.collapsibletopics li#section-0.fordsoncourseformat .content {
-    border:0;
+  border: 0;
 }
+
 .course-content ul.collapsibletopics li.section.fordsoncourseformat .content {
-    padding: 0;
-    border: 1px solid $gray-300;
-    border-bottom: 20px solid $gray-600;
-    margin: 4rem 0;
+  padding: 0;
+  border: 1px solid $gray-300;
+  border-bottom: 20px solid $gray-600;
+  margin: 4rem 0;
 }
 
 // Activity Styling.
 
 .section li.activity:hover {
-    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
-    background-color: $activityhover;
+  transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+  background-color: $activityhover;
 }
 
 .section li.activity.modtype_label.label:hover {
-    transition: none;
-    background-color: inherit;
+  transition: none;
+  background-color: inherit;
 }
 
 .editing .section .activity:hover,
 .editing .section .activity.action-menu-shown {
-    background-color: $activityhover;
+  background-color: $activityhover;
 }
 
 .course-content img.activityicon {
-    height: $activityiconsize;
-    width: $activityiconsize;
-    vertical-align: middle !important;
+  height: $activityiconsize;
+  width: $activityiconsize;
+  vertical-align: middle !important;
 }
 
 @if $spectrumpreset == 1 {
-    .course-content .section-summary {
-        border: 0; 
-    }
-    .section-go-link.btn.btn-secondary {
-        display: block;
-        margin-top: 2rem;
-    }
-    .section-summary-activities {
-        width: 85%;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    .course-content ul.topics li.section.current .content, .course-content ul.weeks li.section.current .content {
-        border-top: 25px solid $spectrum-base;
-    }
+  .course-content .section-summary {
+    border: 0;
+  }
+  .section-go-link.btn.btn-secondary {
+    display: block;
+    margin-top: 2rem;
+  }
+  .section-summary-activities {
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .course-content ul.topics li.section.current .content, .course-content ul.weeks li.section.current .content {
+    border-top: 25px solid $spectrum-base;
+  }
 
 }

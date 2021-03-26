@@ -24,6 +24,8 @@
  */
 
 // Check the file is being called internally from within Moodle.
+use core\output\icon_system;
+
 defined('MOODLE_INTERNAL') || die();
 
 // Call the theme lib file.
@@ -47,7 +49,7 @@ $THEME->editor_sheets = [''];
 $THEME->layouts = [
     'base' => [
         'file' => 'columns2.php',
-        'regions' => array(),
+        'regions' => [],
     ],
     // Standard layout with blocks, this is recommended for most pages with general information.
     'standard' => [
@@ -81,7 +83,7 @@ $THEME->layouts = [
     // The pagelayout used for safebrowser and securewindow.
     'secure' => [
         'file' => 'secure.php',
-        'regions' => array('side-pre'),
+        'regions' => ['side-pre'],
         'defaultregion' => 'side-pre'
     ],
     // Server administration scripts.
@@ -93,61 +95,61 @@ $THEME->layouts = [
     // My dashboard page.
     'mydashboard' => [
         'file' => 'columns2.php',
-        'regions' => array('side-pre'),
+        'regions' => ['side-pre'],
         'defaultregion' => 'side-pre',
-        'options' => array('nonavbar' => true, 'langmenu' => true, 'nocontextheader' => true),
+        'options' => ['nonavbar' => true, 'langmenu' => true, 'nocontextheader' => true],
     ],
     // Pages that appear in pop-up windows - no navigation, no blocks, no header.
     'popup' => [
         'file' => 'columns1.php',
-        'regions' => array(),
-        'options' => array('nofooter' => true, 'nonavbar' => true),
+        'regions' => [],
+        'options' => ['nofooter' => true, 'nonavbar' => true],
     ],
     // No blocks and minimal footer - used for legacy frame layouts only!
     'frametop' => [
         'file' => 'columns1.php',
-        'regions' => array(),
-        'options' => array('nofooter' => true, 'nocoursefooter' => true),
+        'regions' => [],
+        'options' => ['nofooter' => true, 'nocoursefooter' => true],
     ],
     // Embeded pages, like iframe/object embeded in moodleform - it needs as much space as possible.
     'embedded' => [
         'file' => 'embedded.php',
-        'regions' => array()
+        'regions' => []
     ],
     // Used during upgrade and install, and for the 'This site is undergoing maintenance' message.
     // This must not have any blocks, links, or API calls that would lead to database or cache interaction.
     // Please be extremely careful if you are modifying this layout.
     'maintenance' => [
         'file' => 'maintenance.php',
-        'regions' => array(),
+        'regions' => [],
     ],
     // Should display the content and basic headers only.
     'print' => [
         'file' => 'columns1.php',
-        'regions' => array(),
-        'options' => array('nofooter' => true, 'nonavbar' => false),
+        'regions' => [],
+        'options' => ['nofooter' => true, 'nonavbar' => false],
     ],
     // The pagelayout used when a redirection is occuring.
     'redirect' => [
         'file' => 'embedded.php',
-        'regions' => array(),
+        'regions' => [],
     ],
     // My public page.
     'mypublic' => [
         'file' => 'columns2.php',
-        'regions' => array('side-pre'),
+        'regions' => ['side-pre'],
         'defaultregion' => 'side-pre',
     ],
     // The pagelayout used for reports.
     'report' => [
         'file' => 'columns2.php',
-        'regions' => array('side-pre'),
+        'regions' => ['side-pre'],
         'defaultregion' => 'side-pre',
     ],
     'login' => [
         'file' => 'login.php',
-        'regions' => array(),
-        'options' => array('langmenu' => true),
+        'regions' => [],
+        'options' => ['langmenu' => true],
     ],
 ];
 
@@ -182,7 +184,7 @@ if ($THEME->settings->blockdisplay == 2 && $THEME->settings->enhancedmydashboard
 }
 
 // Call main theme scss - including the selected preset.
-$THEME->scss = function($theme) {
+$THEME->scss = function ($theme) {
     return theme_fordson_get_main_scss_content($theme);
 };
 
@@ -206,8 +208,8 @@ if ($THEME->settings->blockdisplay == 2) {
     $THEME->addblockposition = BLOCK_ADDBLOCK_POSITION_FLATNAV;
 }
 
-$THEME->iconsystem = \core\output\icon_system::FONTAWESOME;
+$THEME->iconsystem = icon_system::FONTAWESOME;
 
 $THEME->enable_dock = false;
-$THEME->yuicssmodules = array();
+$THEME->yuicssmodules = [];
 $THEME->requiredblocks = '';

@@ -65,7 +65,7 @@ $hasslideshowpages = (isset($PAGE->theme->settings->slideshowpages) && ($PAGE->t
 
 $regionmainsettingsmenu = $OUTPUT->region_main_settings_menu();
 $templatecontext = [
-    'sitename' => format_string($SITE->shortname, true, array('context' => context_course::instance(SITEID))),
+    'sitename' => format_string($SITE->shortname, true, ['context' => context_course::instance(SITEID)]),
     'output' => $OUTPUT,
     'sidepreblocks' => $blockshtml,
     'fpablocks' => $blockshtmla,

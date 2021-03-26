@@ -42,27 +42,27 @@ $gutterwidth: 2rem !default;
 $calendartoday: #fbffba !default;
 $custommenu-bg: #fff !default;
 
-$sectionnamehighlight : #43d0f3 !default;
+$sectionnamehighlight: #43d0f3 !default;
 $dpsaccentcolor: #44d4a6 !default;
 $sectionactivitybkg: #fdfdfd !default;
 $sectionbkg: $sectionactivitybkg !default;
-$layout5imgoverlay: rgba(0,0,0,0.5) !default;
+$layout5imgoverlay: rgba(0, 0, 0, 0.5) !default;
 $spectrum-base: #3fcbda !default;
-$elearningcontentbkg: rgba(255,255,255,0.6) !default;
+$elearningcontentbkg: rgba(255, 255, 255, 0.6) !default;
 
 //Preset Checks for unique styling
 $spectrumpreset: 0 !default;
 $modernmoodlepreset: 0 !default;
 $perceptionpreset: 0 !default;
 
-$topnavbarbg: 						$white !default;
-$teachernavbarcolor: 				#f3e420 !default;
-$studentnavbarcolor: 				$topnavbarbg !default;
-$navbar-fhs-color:                  $black !default;
-$navbar-fhs-active-color:           $black !default;              
-$navbar-fhs-hover-color:            $black !default;
-$navbar-fhs-disabled-color:         $black !default;
-$navbar-fhs-toggler-border-color:	initial !default;
-$navbar-fhs-toggler-icon-bg:		initial !default;
+$topnavbarbg: $white !default;
+$teachernavbarcolor: #f3e420 !default;
+$studentnavbarcolor: $topnavbarbg !default;
+$navbar-fhs-color: $black !default;
+$navbar-fhs-active-color: $black !default;
+$navbar-fhs-hover-color: $black !default;
+$navbar-fhs-disabled-color: $black !default;
+$navbar-fhs-toggler-border-color: initial !default;
+$navbar-fhs-toggler-icon-bg: initial !default;
 
-$perceptionfontsize:    			1.25rem !default;
+$perceptionfontsize: 1.25rem !default;

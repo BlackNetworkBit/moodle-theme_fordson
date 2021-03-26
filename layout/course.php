@@ -49,7 +49,7 @@ $checkblockb = strpos($blockshtmlb, 'data-block=') !== false;
 $checkblockc = strpos($blockshtmlc, 'data-block=') !== false;
 $hasfpblockregion = ($PAGE->theme->settings->blockdisplay == 1) !== false;
 
-$hasactivitynav = ($PAGE->theme->settings->showactivitynav ==1) !== false;
+$hasactivitynav = ($PAGE->theme->settings->showactivitynav == 1) !== false;
 
 $hascourseblocks = false;
 if ($checkblocka || $checkblockb || $checkblockc) {
@@ -59,7 +59,9 @@ if ($checkblocka || $checkblockb || $checkblockc) {
 $regionmainsettingsmenu = $OUTPUT->region_main_settings_menu();
 
 $templatecontext = [
-    'sitename' => format_string($SITE->shortname, true, ['context' => context_course::instance(SITEID) , "escape" => false]) , 
+    'sitename' => format_string($SITE->shortname,
+        true,
+        ['context' => context_course::instance(SITEID), "escape" => false]),
     'output' => $OUTPUT,
     'sidepreblocks' => $blockshtml,
     'fpablocks' => $blockshtmla,

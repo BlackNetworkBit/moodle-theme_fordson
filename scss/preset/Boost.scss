@@ -1,6 +1,6 @@
 // Bootstrap variables
 
-$white:    #fff !default;
+$white: #fff !default;
 $gray-100: #f8f9fa !default;
 $gray-200: #e9ecef !default;
 $gray-300: #dee2e6 !default;
@@ -10,48 +10,48 @@ $gray-600: #868e96 !default;
 $gray-700: #495057 !default;
 $gray-800: #373a3c !default;
 $gray-900: #212529 !default;
-$black:    #000 !default;
+$black: #000 !default;
 
-$blue:    #1177d1 !default;
-$indigo:  #6610f2 !default;
-$purple:  #613d7c !default;
-$pink:    #e83e8c !default;
-$red:     #d9534f !default;
-$orange:  #f0ad4e !default;
-$yellow:  #ff7518 !default;
-$green:   #5cb85c !default;
-$teal:    #20c997 !default;
-$cyan:    #5bc0de !default;
+$blue: #1177d1 !default;
+$indigo: #6610f2 !default;
+$purple: #613d7c !default;
+$pink: #e83e8c !default;
+$red: #d9534f !default;
+$orange: #f0ad4e !default;
+$yellow: #ff7518 !default;
+$green: #5cb85c !default;
+$teal: #20c997 !default;
+$cyan: #5bc0de !default;
 
-$primary:       $blue !default;
-$secondary:     $gray-800 !default;
-$success:       $green !default;
-$info:          $cyan !default;
-$warning:       $yellow !default;
-$danger:        $red !default;
-$light:         $gray-100 !default;
-$dark:          $gray-800 !default;
+$primary: $blue !default;
+$secondary: $gray-800 !default;
+$success: $green !default;
+$info: $cyan !default;
+$warning: $yellow !default;
+$danger: $red !default;
+$light: $gray-100 !default;
+$dark: $gray-800 !default;
 
 // Options
 $enable-rounded: false !default;
 
 // Body
-$body-color:    $gray-800 !default;
+$body-color: $gray-800 !default;
 
 // Fonts
 $font-size-base: 0.9375rem !default;
-$headings-font-weight:   300 !default;
+$headings-font-weight: 300 !default;
 
 // Navbar
-$navbar-dark-hover-color:           rgba($white, 1) !default;
-$navbar-light-hover-color:          rgba($black, .9) !default;
+$navbar-dark-hover-color: rgba($white, 1) !default;
+$navbar-light-hover-color: rgba($black, .9) !default;
 
 // Breadcrumbs
-$breadcrumb-padding-y:              .25rem !default;
-$breadcrumb-padding-x:              0 !default;
-$breadcrumb-item-padding:           .5rem !default;
-$breadcrumb-margin-bottom:          0 !default;
-$breadcrumb-bg:                     transparent !default;
+$breadcrumb-padding-y: .25rem !default;
+$breadcrumb-padding-x: 0 !default;
+$breadcrumb-item-padding: .5rem !default;
+$breadcrumb-margin-bottom: 0 !default;
+$breadcrumb-bg: transparent !default;
 $breadcrumb-divider: "/" !default;
 $breadcrumb-divider-rtl: "/" !default;
 
@@ -62,19 +62,19 @@ $breadcrumbdash: $gray-200 !default;
 $breadcrumbdimmed: $gray-600 !default;
 
 // Alerts
-$alert-border-width:                0 !default;
+$alert-border-width: 0 !default;
 
 $card-group-margin: .25rem;
 
 $theme-colors: (
-    primary: $primary,
-    secondary: $gray-200,
-    success: $success,
-    info: $info,
-    warning: $orange,
-    danger: $danger,
-    light: $gray-100,
-    dark: $gray-800
+        primary: $primary,
+        secondary: $gray-200,
+        success: $success,
+        info: $info,
+        warning: $orange,
+        danger: $danger,
+        light: $gray-100,
+        dark: $gray-800
 );
 
 // Import FontAwesome.
@@ -90,27 +90,27 @@ $theme-colors: (
 // Preset CSS
 
 body {
-    -webkit-font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
 }
 
 .navbar {
-    box-shadow: 0 2px 4px rgba(0, 0, 0, .08);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .08);
 }
 
 .filemanager-container,
 .filepicker-filelist {
-    @extend .border;
+  @extend .border;
 }
 
 // Rounded user pictures
 .userpicture {
-    border-radius: 50%;
+  border-radius: 50%;
 }
 
 // Reset the default styling back to the bootstrap defaults for
 // the secondary outline button because gray-200 is much too light
 // for an outline button.
 .btn-outline-secondary {
-    @include button-outline-variant($gray-600);
-    border-color: $border-color;
+  @include button-outline-variant($gray-600);
+  border-color: $border-color;
 }

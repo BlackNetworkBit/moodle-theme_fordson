@@ -35,172 +35,173 @@
 //Styling
 
 .course-content li.current .content ul.section {
-    border-left: 6px solid $dpsaccentcolor;
+  border-left: 6px solid $dpsaccentcolor;
 }
 
 .course-content .current::before {
-    border-left: 0;
+  border-left: 0;
 }
 
 .course-content ul.topics li.section .summary,
 .course-content ul.weeks li.section .summary,
 .course-content ul.topics li.section .content > .availabilityinfo,
 .course-content ul.weeks li.section .content > .availabilityinfo {
-    margin: 0;
-    padding: 1rem;
-    background-color: $gray-100;
+  margin: 0;
+  padding: 1rem;
+  background-color: $gray-100;
 }
 
 h3.sectionname {
-    color: $light;
-    padding: .5rem 2rem;
-    background-color: $dark;
-    display: inline-block;
-    border-radius: 30px 30px 80px 80px;
-    position: relative;
-    top: -15px;
-    border-top: 15px solid $primary;
-    margin-bottom: 0!important;
-    text-align: center;
+  color: $light;
+  padding: .5rem 2rem;
+  background-color: $dark;
+  display: inline-block;
+  border-radius: 30px 30px 80px 80px;
+  position: relative;
+  top: -15px;
+  border-top: 15px solid $primary;
+  margin-bottom: 0 !important;
+  text-align: center;
 }
 
 h3.sectionname a {
-    color: $white;
+  color: $white;
 }
 
 .course-content ul.topics li.section .content,
 .course-content ul.weeks li.section .content {
-    background-color: $card-bg;
-    border: 3px solid $gray-300;
-    margin-top: 2rem;
-    padding-top: 0;
-    border-radius: $border-radius;
-    text-align: center;
+  background-color: $card-bg;
+  border: 3px solid $gray-300;
+  margin-top: 2rem;
+  padding-top: 0;
+  border-radius: $border-radius;
+  text-align: center;
 }
+
 .course-content .content .summary, .course-content .content .li.activity {
-    text-align: left;
+  text-align: left;
 }
 
 
 .course-content ul.topics li.section, .course-content ul.weeks li.section {
-    padding-top: 2rem;
-    padding-bottom: 3rem;
+  padding-top: 2rem;
+  padding-bottom: 3rem;
 }
 
 .course-content ul li.section.main {
-    border-bottom: 0;
-    margin-top: 0;
+  border-bottom: 0;
+  margin-top: 0;
 }
 
 li.current h3.sectionname {
-    background-color: $dpsaccentcolor;
+  background-color: $dpsaccentcolor;
 }
 
 li.section.hidden {
-    background-color: initial;
+  background-color: initial;
 }
 
 .course-content ul li.section.hidden .content {
-    background-color: $gray-300;
+  background-color: $gray-300;
 }
 
 li.section.hidden h3.sectionname {
-    background-color: $gray-300;
+  background-color: $gray-300;
 }
 
 .course-content ul.section {
-    margin: 0;
-    padding: 1rem;
-    background-color: $sectionactivitybkg;
+  margin: 0;
+  padding: 1rem;
+  background-color: $sectionactivitybkg;
 }
 
 .course-content .hidden ul.section {
-    background-color: $gray-300;
+  background-color: $gray-300;
 }
 
 
 .path-mod-assign [data-region="grading-navigation"] {
-    background-color: #fff;
+  background-color: #fff;
 }
 
 div#changenumsections {
-    margin-top: 3rem;
+  margin-top: 3rem;
 }
 
 .section-modchooser {
-    padding: 1rem;
+  padding: 1rem;
 }
 
-span.section-modchooser-link{
-    background-color: $sectionactivitybkg;
-    padding: .5rem;
+span.section-modchooser-link {
+  background-color: $sectionactivitybkg;
+  padding: .5rem;
 
 }
 
 a.add-sections {
-    background-color: $sectionbkg;
-    padding: 10px;
-    border-radius: $border-radius;
+  background-color: $sectionbkg;
+  padding: 10px;
+  border-radius: $border-radius;
 }
 
 .progress.fordsonsinglepage {
-    position: absolute;
-    margin-top: 1rem;
+  position: absolute;
+  margin-top: 1rem;
 }
 
 
 // Single Activity fixes
 
 #page-course-view-topics .course-content .section-summary {
-    border: 0;
+  border: 0;
 }
 
 .single-section h3.sectionname {
-    display: block;
-    margin-top: 3rem;
+  display: block;
+  margin-top: 3rem;
 }
 
 // Activity Styling.
 
 ul {
-    padding-left: 1rem;
-    padding-right: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 li.activity.label {
-    border: initial;
+  border: initial;
 }
 
 .section li.activity {
-    padding: calc($spacer - 50%);
-    border-bottom: 1px dashed $gray-300;
+  padding: calc($spacer - 50%);
+  border-bottom: 1px dashed $gray-300;
 }
 
 .section li.activity:hover {
-    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
-    background-color: $activityhover;
+  transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+  background-color: $activityhover;
 }
 
 .section li.activity.modtype_label.label:hover {
-    transition: none;
-    background-color: inherit;
+  transition: none;
+  background-color: inherit;
 }
 
 .editing .section .activity:hover,
 .editing .section .activity.action-menu-shown {
-    background-color: $activityhover;
+  background-color: $activityhover;
 }
 
 .course-content img.activityicon {
-    height: $activityiconsize;
-    width: $activityiconsize;
-    vertical-align: middle !important;
+  height: $activityiconsize;
+  width: $activityiconsize;
+  vertical-align: middle !important;
 }
 
 span.instancename {
-    margin-left: 1rem;
+  margin-left: 1rem;
 }
 
 .region_main_settings_menu_proxy {
-    float: initial;
+  float: initial;
 }

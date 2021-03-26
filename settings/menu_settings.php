@@ -18,9 +18,9 @@
  * Heading and course images settings page file.
  *
  * @packagetheme_fordson
- * @copyright  2016 Chris Kenniburg
+ * @copyright          2016 Chris Kenniburg
  * @creditstheme_boost - MoodleHQ
- * @licensehttp://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @licensehttp        ://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die();
@@ -63,13 +63,13 @@ $page->add($setting);
 
 // Navbar Color switch toggle based on role
 $name = 'theme_fordson/navbarcolorswitch';
-$title = get_string('navbarcolorswitch','theme_fordson');
+$title = get_string('navbarcolorswitch', 'theme_fordson');
 $description = get_string('navbarcolorswitch_desc', 'theme_fordson');
 $default = '2';
-$choices = array(
-	'1' => get_string('navbarcolorswitch_on', 'theme_fordson'),
-	'2' => get_string('navbarcolorswitch_off', 'theme_fordson'),
-	);
+$choices = [
+    '1' => get_string('navbarcolorswitch_on', 'theme_fordson'),
+    '2' => get_string('navbarcolorswitch_off', 'theme_fordson'),
+];
 $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
@@ -155,23 +155,23 @@ $page->add($setting);
 
 // Set terminology for dropdown course list
 $name = 'theme_fordson/mycoursetitle';
-$title = get_string('mycoursetitle','theme_fordson');
+$title = get_string('mycoursetitle', 'theme_fordson');
 $description = get_string('mycoursetitledesc', 'theme_fordson');
 $default = 'course';
-$choices = array(
-	'course' => get_string('mycourses', 'theme_fordson'),
-	'module' => get_string('mymodules', 'theme_fordson'),
-	'unit' => get_string('myunits', 'theme_fordson'),
-	'class' => get_string('myclasses', 'theme_fordson'),
-	'training' => get_string('mytraining', 'theme_fordson'),
-	'pd' => get_string('myprofessionaldevelopment', 'theme_fordson'),
-	'cred' => get_string('mycred', 'theme_fordson'),
-	'plan' => get_string('myplans', 'theme_fordson'),
-	'comp' => get_string('mycomp', 'theme_fordson'),
-	'program' => get_string('myprograms', 'theme_fordson'),
-	'lecture' => get_string('mylectures', 'theme_fordson'),
-	'lesson' => get_string('mylessons', 'theme_fordson'),
-	);
+$choices = [
+    'course' => get_string('mycourses', 'theme_fordson'),
+    'module' => get_string('mymodules', 'theme_fordson'),
+    'unit' => get_string('myunits', 'theme_fordson'),
+    'class' => get_string('myclasses', 'theme_fordson'),
+    'training' => get_string('mytraining', 'theme_fordson'),
+    'pd' => get_string('myprofessionaldevelopment', 'theme_fordson'),
+    'cred' => get_string('mycred', 'theme_fordson'),
+    'plan' => get_string('myplans', 'theme_fordson'),
+    'comp' => get_string('mycomp', 'theme_fordson'),
+    'program' => get_string('myprograms', 'theme_fordson'),
+    'lecture' => get_string('mylectures', 'theme_fordson'),
+    'lesson' => get_string('mylessons', 'theme_fordson'),
+];
 $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
@@ -199,7 +199,6 @@ $default = false;
 $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
-
 
 
 // Must add the page after definiting all the settings!

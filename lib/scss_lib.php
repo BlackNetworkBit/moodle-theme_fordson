@@ -28,7 +28,7 @@ defined('MOODLE_INTERNAL') || die();
 /**
  * Post process the CSS tree.
  *
- * @param string $tree The CSS tree.
+ * @param string       $tree  The CSS tree.
  * @param theme_config $theme The theme config object.
  */
 function theme_fordson_css_tree_post_processor($tree, $theme) {
@@ -64,8 +64,7 @@ function theme_fordson_get_main_scss_content($theme) {
         $filename .= '.scss';
         if ($filename && ($presetfile = $fs->get_file($context->id, 'theme_fordson', 'preset', 0, '/', $filename))) {
             $scss .= $presetfile->get_content();
-        }
-        else {
+        } else {
             // Safety fallback - maybe new installs etc.
             $scss .= file_get_contents($CFG->dirroot . '/theme/fordson/scss/preset/Perception.scss');
         }
@@ -147,30 +146,30 @@ function theme_fordson_get_pre_scss($theme) {
     $prescss = '';
 
     $configurable = [
-    // Config key => variableName,
-    'brandprimary' => ['primary'],
-    'brandsuccess' => ['success'],
-    'brandinfo' => ['info'],
-    'brandwarning' => ['warning'],
-    'branddanger' => ['danger'],
-    'bodybackground' => ['body-bg'],
-    'breadcrumbbkg' => ['breadcrumb-bg'],
-    'cardbkg' => ['card-bg'],
-    'drawerbkg' => ['drawer-bg'],
-    'footerbkg' => ['footer-bg'],
-    'fploginform' => ['fploginform'],
-    'headerimagepadding' => ['headerimagepadding'],
-    'markettextbg' => ['markettextbg'],
-    'iconwidth' => ['fpicon-width'],
-    'courseboxheight' => ['courseboxheight'],
-    'learningcontentpadding' => ['learningcontentpadding'],
-    'blockwidthfordson' => ['blockwidthfordson'],
-    'slideshowheight' => ['slideshowheight'],
-    'activityiconsize' => ['activityiconsize'],
-    'gutterwidth' => ['gutterwidth'],
-    'topnavbarbg' => ['topnavbarbg'],
-    'topnavbarteacherbg' => ['teachernavbarcolor'],
-    'slideshowspacer' => ['slideshowspacer'],
+        // Config key => variableName,
+        'brandprimary' => ['primary'],
+        'brandsuccess' => ['success'],
+        'brandinfo' => ['info'],
+        'brandwarning' => ['warning'],
+        'branddanger' => ['danger'],
+        'bodybackground' => ['body-bg'],
+        'breadcrumbbkg' => ['breadcrumb-bg'],
+        'cardbkg' => ['card-bg'],
+        'drawerbkg' => ['drawer-bg'],
+        'footerbkg' => ['footer-bg'],
+        'fploginform' => ['fploginform'],
+        'headerimagepadding' => ['headerimagepadding'],
+        'markettextbg' => ['markettextbg'],
+        'iconwidth' => ['fpicon-width'],
+        'courseboxheight' => ['courseboxheight'],
+        'learningcontentpadding' => ['learningcontentpadding'],
+        'blockwidthfordson' => ['blockwidthfordson'],
+        'slideshowheight' => ['slideshowheight'],
+        'activityiconsize' => ['activityiconsize'],
+        'gutterwidth' => ['gutterwidth'],
+        'topnavbarbg' => ['topnavbarbg'],
+        'topnavbarteacherbg' => ['teachernavbarcolor'],
+        'slideshowspacer' => ['slideshowspacer'],
     ];
 
     // Add settings variables.
@@ -182,7 +181,8 @@ function theme_fordson_get_pre_scss($theme) {
         array_map(function ($target) use (&$prescss, $value) {
             $prescss .= '$' . $target . ': ' . $value . ";\n";
         }
-        , (array)$targets);
+            ,
+            (array) $targets);
     }
 
     // Prepend pre-scss.
@@ -226,14 +226,14 @@ function theme_fordson_get_pre_scss($theme) {
     if ($PAGE->theme->settings->showcustomlogin == 1) {
         if (isset($loginbg)) {
             $prescss .= '#page.customloginimage {background-image: url("' . $loginbg . '") !important; background-size:cover; background-position:center;}';
-        } 
+        }
     } else {
         if (isset($loginbg)) {
             $prescss .= 'body#page-login-signup {background-image: url("' . $loginbg . '") !important; background-size:cover; background-position:center;}';
             $prescss .= 'body#page-login-index {background-image: url("' . $loginbg . '") !important; background-size:cover; background-position:center;}';
         }
     }
-    
+
     // Set the image.
     $marketing1image = $theme->setting_file_url('marketing1image', 'marketing1image');
     if (isset($marketing1image)) {

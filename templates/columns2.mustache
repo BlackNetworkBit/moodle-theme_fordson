@@ -63,42 +63,42 @@
     {{/output.headerbkglocation}}
 
     <div id="page" class="container-fluid">
-        
+
         <div id="learningcontent">
-        
+
             {{{ output.teacherdash }}}
             {{>theme_fordson/blockspanelslider}}
             {{{ output.full_header }}}
-            
+
             <div id="page-content" class="row pb-3">
                 <div id="region-main-box" class="col-12">
                     {{#hasregionmainsettingsmenu}}
-                    <div id="region-main-settings-menu" class="d-print-none {{#hasblocks}}has-blocks{{/hasblocks}}">
-                        <div> {{{ output.region_main_settings_menu }}} </div>
-                    </div>
+                        <div id="region-main-settings-menu" class="d-print-none {{#hasblocks}}has-blocks{{/hasblocks}}">
+                            <div> {{{ output.region_main_settings_menu }}} </div>
+                        </div>
                     {{/hasregionmainsettingsmenu}}
                     <section id="region-main" {{#hasblocks}}class="has-blocks mb-3"{{/hasblocks}}>
 
-                                {{#hasregionmainsettingsmenu}}
-                                    <div class="region_main_settings_menu_proxy"></div>
-                                {{/hasregionmainsettingsmenu}}
-                                {{#output.display_ilearn_secure_alert}}
-                                    <div class="ilearnsecurebrowser text-center">
-                                        <div class="ilearnsecurealert bg-danger text-white text-center d-inline-block">
-                                            <p>{{#str}} ilearnsecurebrowser , theme_fordson{{/str}}</p>
-                                        </div>
-                                    </div>
-                                {{/output.display_ilearn_secure_alert}}
-                                {{{ output.customcoursedashboardimage }}}
-                                {{{ output.course_content_header }}}
-                                {{{ output.main_content }}}
-                                {{{ output.course_content_footer }}}
+                        {{#hasregionmainsettingsmenu}}
+                            <div class="region_main_settings_menu_proxy"></div>
+                        {{/hasregionmainsettingsmenu}}
+                        {{#output.display_ilearn_secure_alert}}
+                            <div class="ilearnsecurebrowser text-center">
+                                <div class="ilearnsecurealert bg-danger text-white text-center d-inline-block">
+                                    <p>{{#str}} ilearnsecurebrowser , theme_fordson{{/str}}</p>
+                                </div>
+                            </div>
+                        {{/output.display_ilearn_secure_alert}}
+                        {{{ output.customcoursedashboardimage }}}
+                        {{{ output.course_content_header }}}
+                        {{{ output.main_content }}}
+                        {{{ output.course_content_footer }}}
 
                     </section>
                     {{#hasblocks}}
-                    <section data-region="blocks-column" class="hidden-print">
-                        {{{ sidepreblocks }}}
-                    </section>
+                        <section data-region="blocks-column" class="hidden-print">
+                            {{{ sidepreblocks }}}
+                        </section>
                     {{/hasblocks}}
                 </div>
             </div>
@@ -119,16 +119,17 @@
 
 </div>
 
-<a href="#" id="back-to-top" class="btn btn-primary btn-lg" role="button" title="{{#str}}backtotop, theme_fordson{{/str}}"><i class="fa fa-chevron-circle-up" aria-hidden="true"></i></a>
+<a href="#" id="back-to-top" class="btn btn-primary btn-lg" role="button"
+   title="{{#str}}backtotop, theme_fordson{{/str}}"><i class="fa fa-chevron-circle-up" aria-hidden="true"></i></a>
 
 </body>
 </html>
 {{#js}}
-require(['theme_boost/loader']);
-require(['jquery','theme_boost/bootstrap/tooltip'], function($){$('[data-tooltip="tooltip"]').tooltip()});
-{{#hasfhsdrawer}}
-require(['theme_boost/drawer'], function(mod) {
-    mod.init();
-});
-{{/hasfhsdrawer}}
+    require(['theme_boost/loader']);
+    require(['jquery','theme_boost/bootstrap/tooltip'], function($){$('[data-tooltip="tooltip"]').tooltip()});
+    {{#hasfhsdrawer}}
+        require(['theme_boost/drawer'], function(mod) {
+        mod.init();
+        });
+    {{/hasfhsdrawer}}
 {{/js}}
