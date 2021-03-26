@@ -26,7 +26,7 @@
 defined('MOODLE_INTERNAL') || die();
 
 $page = new admin_settingpage('theme_fordson_content', get_string('contentsettings', 'theme_fordson'));
-// Content Info
+// Content Info.
 $name = 'theme_fordson/textcontentinfo';
 $heading = get_string('textcontentinfo', 'theme_fordson');
 $information = get_string('textcontentinfodesc', 'theme_fordson');

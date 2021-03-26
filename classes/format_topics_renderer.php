@@ -35,7 +35,6 @@ class theme_fordson_format_topics_renderer extends format_topics_renderer {
      * @return string HTML to output.
      */
     protected function section_summary($section, $course, $mods) {
-        global $PAGE;
         $classattr = 'section main section-summary clearfix';
         $linkclasses = '';
 
@@ -68,7 +67,8 @@ class theme_fordson_format_topics_renderer extends format_topics_renderer {
                     if ($cancomplete && $completioninfo->is_enabled($thismod) != COMPLETION_TRACKING_NONE) {
                         $total++;
                         $completiondata = $completioninfo->get_data($thismod, true);
-                        if ($completiondata->completionstate == COMPLETION_COMPLETE || $completiondata->completionstate == COMPLETION_COMPLETE_PASS) {
+                        if ($completiondata->completionstate == COMPLETION_COMPLETE ||
+                            $completiondata->completionstate == COMPLETION_COMPLETE_PASS) {
                             $complete++;
                         }
                     }
@@ -94,31 +94,18 @@ class theme_fordson_format_topics_renderer extends format_topics_renderer {
                 'aria-label' => $title
             ]);
 
-        $o .= html_writer::tag('div',
-            '',
-            [
-                'class' => 'left side'
-            ]);
-        $o .= html_writer::tag('div',
-            '',
-            [
-                'class' => 'right side'
-            ]);
-        $o .= html_writer::start_tag('div',
-            [
-                'class' => 'content'
-            ]);
+        $o .= html_writer::tag('div', '', ['class' => 'left side']);
+        $o .= html_writer::tag('div', '', ['class' => 'right side']);
+        $o .= html_writer::start_tag('div', ['class' => 'content']);
         if ($total > 0) {
             $completion = new stdClass;
             $completion->complete = $complete;
             $completion->total = $total;
             $percenttext = get_string('coursecompletion', 'completion');
             $percent = 0;
-
             if ($complete > 0) {
                 $percent = (int) (($complete / $total) * 100);
             }
-
             $o .= "<div class='progress fordsonsinglepage'>";
             $o .= "<div class='progress-bar progress-bar-info' role='progressbar' aria-valuenow='{$percent}' ";
             $o .= " aria-valuemin='0' aria-valuemax='100' style='width: {$percent}%;'>";
@@ -138,10 +125,7 @@ class theme_fordson_format_topics_renderer extends format_topics_renderer {
         }
         // Add .sectionname so that fontawesome icon can be applied to this page too.
         $o .= $this->output->heading($title, 3, 'section-title sectionname');
-        $o .= html_writer::start_tag('div',
-            [
-                'class' => 'summarytext'
-            ]);
+        $o .= html_writer::start_tag('div', ['class' => 'summarytext']);
 
         $o .= $this->format_summary_text($section);
         $o .= $this->section_activity_summary($section, $course, null);
@@ -166,8 +150,6 @@ class theme_fordson_format_topics_renderer extends format_topics_renderer {
      * @return string HTML to output.
      */
     protected function section_activity_summary($section, $course, $mods) {
-        global $PAGE;
-
         $modinfo = get_fast_modinfo($course);
         if (empty($modinfo->sections[$section->section])) {
             return '';
@@ -198,7 +180,8 @@ class theme_fordson_format_topics_renderer extends format_topics_renderer {
                 if ($cancomplete && $completioninfo->is_enabled($thismod) != COMPLETION_TRACKING_NONE) {
                     $total++;
                     $completiondata = $completioninfo->get_data($thismod, true);
-                    if ($completiondata->completionstate == COMPLETION_COMPLETE || $completiondata->completionstate == COMPLETION_COMPLETE_PASS) {
+                    if ($completiondata->completionstate == COMPLETION_COMPLETE ||
+                        $completiondata->completionstate == COMPLETION_COMPLETE_PASS) {
                         $complete++;
                     }
                 }
@@ -212,33 +195,24 @@ class theme_fordson_format_topics_renderer extends format_topics_renderer {
 
         $output = '';
         // Output Link to Topic modules.
-        // $title = get_section_name($course, $section);
+        // Later usage: $title = get_section_name($course, $section); ?
         $linktitle = get_string('viewsectionmodules', 'theme_fordson');
         $output = html_writer::link(new moodle_url('/course/view.php',
-            ['id' => $PAGE->course->id, 'section' => $section->section]),
+            ['id' => $this->page->course->id, 'section' => $section->section]),
             $linktitle,
             ['class' => 'section-go-link btn btn-secondary']);
 
-        // Output section activities summary
-        $output .= html_writer::start_tag('div',
-            [
-                'class' => 'section-summary-activities'
-            ]);
+        // Output section activities summary.
+        $output .= html_writer::start_tag('div', ['class' => 'section-summary-activities']);
 
         $output .= html_writer::tag('span',
             get_string('section_mods', 'theme_fordson'),
-            [
-                'class' => 'activity-count'
-            ]);
+            ['class' => 'activity-count']);
         foreach ($sectionmods as $mod) {
-            $output .= html_writer::start_tag('span',
-                [
-                    'class' => 'activity-count'
-                ]);
+            $output .= html_writer::start_tag('span', ['class' => 'activity-count']);
             $output .= $mod['name'] . ': ' . $mod['count'];
             $output .= html_writer::end_tag('span');
         }
-
         // Output section completion data.
         if ($total > 0) {
             $a = new stdClass;
@@ -251,12 +225,8 @@ class theme_fordson_format_topics_renderer extends format_topics_renderer {
                     'class' => 'activity-count'
                 ]);
         }
-
-
         // End Willian Mono.
-
         $output .= html_writer::end_tag('div');
-
         return $output;
     }
 

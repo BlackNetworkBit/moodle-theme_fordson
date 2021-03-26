@@ -13,9 +13,6 @@
 //
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
-
-defined('MOODLE_INTERNAL') || die();
-
 /**
  * A login page layout for the boost theme.
  *
@@ -24,8 +21,11 @@ defined('MOODLE_INTERNAL') || die();
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+defined('MOODLE_INTERNAL') || die();
+
 $bodyattributes = $OUTPUT->body_attributes();
-$hasslideshowpages = (isset($PAGE->theme->settings->slideshowpages) && ($PAGE->theme->settings->slideshowpages == 0 || $PAGE->theme->settings->slideshowpages == 2)) !== false;
+$hasslideshowpages = (isset($PAGE->theme->settings->slideshowpages) &&
+        ($PAGE->theme->settings->slideshowpages == 0 || $PAGE->theme->settings->slideshowpages == 2)) !== false;
 
 $templatecontext = [
     'sitename' => format_string($SITE->shortname,

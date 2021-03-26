@@ -45,7 +45,7 @@ $setting = new admin_setting_configstoredfile($name, $title, $description, 'favi
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
-// logo image.
+// Logo image.
 $name = 'theme_fordson/headerlogo';
 $title = get_string('headerlogo', 'theme_fordson');
 $description = get_string('headerlogo_desc', 'theme_fordson');

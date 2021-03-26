@@ -25,7 +25,7 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-// Icon Navigation);
+// Icon Navigation.
 $page = new admin_settingpage('theme_fordson_customlogin', get_string('customloginheading', 'theme_fordson'));
 
 // This is the descriptor for icon One.
@@ -60,14 +60,14 @@ $setting = new admin_setting_configcolourpicker($name, $title, $description, '')
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
-// This is the descriptor for icon One
+// This is the descriptor for icon One.
 $name = 'theme_fordson/loginnavicon1info';
 $heading = get_string('loginnavicon1', 'theme_fordson');
 $information = get_string('navicondesc', 'theme_fordson');
 $setting = new admin_setting_heading($name, $heading, $information);
 $page->add($setting);
 
-// icon One
+// Icon One.
 $name = 'theme_fordson/loginnav1icon';
 $title = get_string('navicon', 'theme_fordson');
 $description = get_string('navicondesc', 'theme_fordson');
@@ -92,7 +92,7 @@ $setting = new admin_setting_confightmleditor($name, $title, $description, $defa
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
-// This is the descriptor for icon One
+// This is the descriptor for icon One.
 $name = 'theme_fordson/loginnavicon2info';
 $heading = get_string('loginnavicon2', 'theme_fordson');
 $information = get_string('navicondesc', 'theme_fordson');
@@ -123,7 +123,7 @@ $setting = new admin_setting_confightmleditor($name, $title, $description, $defa
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
-// This is the descriptor for icon three
+// This is the descriptor for icon three.
 $name = 'theme_fordson/loginnavicon3info';
 $heading = get_string('loginnavicon3', 'theme_fordson');
 $information = get_string('navicondesc', 'theme_fordson');
@@ -154,7 +154,7 @@ $setting = new admin_setting_confightmleditor($name, $title, $description, $defa
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
-// This is the descriptor for icon four
+// This is the descriptor for icon four.
 $name = 'theme_fordson/loginnavicon4info';
 $heading = get_string('loginnavicon4', 'theme_fordson');
 $information = get_string('navicondesc', 'theme_fordson');

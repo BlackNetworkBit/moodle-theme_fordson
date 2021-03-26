@@ -65,14 +65,14 @@ $setting = new admin_setting_configstoredfile($name, $title, $description, 'pres
 $page->add($setting);
 
 
-// Layout Info
+// Layout Info.
 $name = 'theme_fordson/layoutinfo';
 $heading = get_string('layoutinfo', 'theme_fordson');
 $information = get_string('layoutinfodesc', 'theme_fordson');
 $setting = new admin_setting_heading($name, $heading, $information);
 $page->add($setting);
 
-// Toggle Page Layout design
+// Toggle Page Layout design.
 $name = 'theme_fordson/pagelayout';
 $title = get_string('pagelayout', 'theme_fordson');
 $description = get_string('pagelayout_desc', 'theme_fordson');
@@ -87,7 +87,7 @@ $setting = new admin_setting_configselect($name, $title, $description, $default,
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
-// Toggle topic/weekly Section Layout design
+// Toggle topic/weekly Section Layout design.
 $name = 'theme_fordson/sectionlayout';
 $title = get_string('sectionlayout', 'theme_fordson');
 $description = get_string('sectionlayout_desc', 'theme_fordson');
@@ -101,12 +101,13 @@ $sectionlayout7 = get_string('sectionlayout7', 'theme_fordson');
 $sectionlayout8 = get_string('sectionlayout8', 'theme_fordson');
 
 $default = '1';
-$choices = ['1' => $sectionlayout1, '2' => $sectionlayout2, '3' => $sectionlayout3, '4' => $sectionlayout4, '5' => $sectionlayout5, '6' => $sectionlayout6, '7' => $sectionlayout7, '8' => $sectionlayout8];
+$choices = ['1' => $sectionlayout1, '2' => $sectionlayout2, '3' => $sectionlayout3, '4' => $sectionlayout4,
+    '5' => $sectionlayout5, '6' => $sectionlayout6, '7' => $sectionlayout7, '8' => $sectionlayout8];
 $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
-// Course Tile Display Styles
+// Course Tile Display Styles.
 $name = 'theme_fordson/coursetilestyle';
 $title = get_string('coursetilestyle', 'theme_fordson');
 $description = get_string('coursetilestyle_desc', 'theme_fordson');
@@ -121,7 +122,9 @@ $coursestyle8 = get_string('coursestyle8', 'theme_fordson');
 $coursestyle9 = get_string('coursestyle9', 'theme_fordson');
 $coursestyle10 = get_string('coursestyle10', 'theme_fordson');
 $default = '10';
-$choices = ['1' => $coursestyle1, '2' => $coursestyle2, '3' => $coursestyle3, '4' => $coursestyle4, '5' => $coursestyle5, '6' => $coursestyle6, '7' => $coursestyle7, '8' => $coursestyle8, '9' => $coursestyle9, '10' => $coursestyle10];
+$choices = ['1' => $coursestyle1, '2' => $coursestyle2, '3' => $coursestyle3, '4' => $coursestyle4,
+    '5' => $coursestyle5, '6' => $coursestyle6, '7' => $coursestyle7, '8' => $coursestyle8,
+    '9' => $coursestyle9, '10' => $coursestyle10];
 $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
@@ -144,10 +147,10 @@ $page->add($setting);
 $name = 'theme_fordson/blockdisplay';
 $title = get_string('blockdisplay', 'theme_fordson');
 $description = get_string('blockdisplay_desc', 'theme_fordson');
-$blockdisplay_on = get_string('blockdisplay_on', 'theme_fordson');
-$blockdisplay_off = get_string('blockdisplay_off', 'theme_fordson');
+$blockdisplayon = get_string('blockdisplay_on', 'theme_fordson');
+$blockdisplayoff = get_string('blockdisplay_off', 'theme_fordson');
 $default = '1';
-$choices = ['1' => $blockdisplay_on, '2' => $blockdisplay_off];
+$choices = ['1' => $blockdisplayon, '2' => $blockdisplayoff];
 $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
@@ -163,10 +166,10 @@ $page->add($setting);
 $name = 'theme_fordson/integrationcollapsibletopics';
 $title = get_string('collapsibletopics', 'theme_fordson');
 $description = get_string('collapsibletopics_desc', 'theme_fordson');
-$integration_on = get_string('integrationon', 'theme_fordson');
-$integration_off = get_string('integrationoff', 'theme_fordson');
+$integrationon = get_string('integrationon', 'theme_fordson');
+$integrationoff = get_string('integrationoff', 'theme_fordson');
 $default = '2';
-$choices = ['1' => $integration_on, '2' => $integration_off];
+$choices = ['1' => $integrationon, '2' => $integrationoff];
 $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
@@ -175,9 +178,9 @@ $page->add($setting);
 $name = 'theme_fordson/easyenrollmentintegration';
 $title = get_string('easyenrollmentintegration', 'theme_fordson');
 $description = get_string('easyenrollmentintegration_desc', 'theme_fordson');
-$integration_on = get_string('integrationon', 'theme_fordson');
+$integrationon = get_string('integrationon', 'theme_fordson');
 $default = '1';
-$choices = ['1' => $integration_on];
+$choices = ['1' => $integrationon];
 $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);

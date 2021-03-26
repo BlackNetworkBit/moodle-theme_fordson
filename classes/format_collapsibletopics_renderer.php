@@ -23,15 +23,13 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-//namespace theme_fordson\output;
-
 defined('MOODLE_INTERNAL') || die();
 global $PAGE;
 
 // So that theme users that do not want collapsibletopics format will not get errors.
-if (file_exists($CFG->dirroot . '/course/format/collapsibletopics/renderer.php') && isset($PAGE->theme->settings->integrationcollapsibletopics) && $PAGE->theme->settings->integrationcollapsibletopics == 1) {
-
-
+if (file_exists($CFG->dirroot . '/course/format/collapsibletopics/renderer.php')
+    && isset($PAGE->theme->settings->integrationcollapsibletopics)
+    && $PAGE->theme->settings->integrationcollapsibletopics == 1) {
     require_once($CFG->dirroot . '/course/format/collapsibletopics/renderer.php');
 
     /**
@@ -43,11 +41,8 @@ if (file_exists($CFG->dirroot . '/course/format/collapsibletopics/renderer.php')
      * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
      */
     class theme_fordson_format_collapsibletopics_renderer extends format_collapsibletopics_renderer {
-
-
-        // Fordson remove expand All button
+        // Fordson remove expand All button.
         public function print_multiple_section_page($course, $sections, $mods, $modnames, $modnamesused) {
-            global $PAGE;
 
             if (!isset($course->coursedisplay)) {
                 $course->coursedisplay = COURSE_DISPLAY_SINGLEPAGE;
@@ -77,7 +72,7 @@ if (file_exists($CFG->dirroot . '/course/format/collapsibletopics/renderer.php')
     </a>
 </div>';
                     // 0-section is displayed a little different then the others.
-                    if ($thissection->summary or !empty($modinfo->sections[0]) or $PAGE->user_is_editing()) {
+                    if ($thissection->summary or !empty($modinfo->sections[0]) or $this->page->user_is_editing()) {
                         $this->page->requires->strings_for_js(['collapseall', 'expandall'], 'moodle');
                         $modules = $this->courserenderer->course_section_cm_list($course, $thissection, 0);
                         echo $this->section_header($thissection, $course, false, 0);
@@ -111,7 +106,7 @@ if (file_exists($CFG->dirroot . '/course/format/collapsibletopics/renderer.php')
                 echo $this->section_footer();
             }
 
-            if ($PAGE->user_is_editing() and has_capability('moodle/course:update', $context)) {
+            if ($this->page->user_is_editing() and has_capability('moodle/course:update', $context)) {
                 // Print stealth sections if present.
                 foreach ($modinfo->get_section_info_all() as $section => $thissection) {
                     if ($section <= $numsections or empty($modinfo->sections[$section])) {
@@ -143,8 +138,6 @@ if (file_exists($CFG->dirroot . '/course/format/collapsibletopics/renderer.php')
          * @return string HTML to output.
          */
         protected function section_header($section, $course, $onsectionpage, $sectionreturn = null) {
-            global $PAGE;
-
             $o = '';
             $sectionstyle = '';
 
@@ -220,7 +213,7 @@ if (file_exists($CFG->dirroot . '/course/format/collapsibletopics/renderer.php')
             if ($hasnamenotsecpg || $hasnamesecpg) {
                 $classes = '';
             }
-            if (!$PAGE->user_is_editing()) {
+            if (!$this->page->user_is_editing()) {
                 $sectionname = html_writer::tag('span',
                     $this->section_title_without_link($section, $course),
                     ['class' => 'sectionname']);
@@ -292,9 +285,7 @@ if (file_exists($CFG->dirroot . '/course/format/collapsibletopics/renderer.php')
         protected function section_summary($section, $course, $mods) {
             $activities = $this->section_activity_summary($section, $course, null);
             $courserenderer = $this->page->get_renderer('core', 'course');
-            $o = '';
-
-            $o .= html_writer::start_tag('div', ['class' => 'summarytext']);
+            $o = html_writer::start_tag('div', ['class' => 'summarytext']);
             $o .= $this->format_summary_text($section);
             if ($section->section != 0) {
                 $o .= '<div class="fhscoursebutton"><a class="sectiontoggle btn btn-primary' .
@@ -303,16 +294,12 @@ if (file_exists($CFG->dirroot . '/course/format/collapsibletopics/renderer.php')
                     '" aria-expanded="true" aria-controls="collapse-' .
                     $section->section .
                     '"> ' . get_string('viewfcfmodules', 'theme_fordson') . ' </a> </div>';
-
             }
             $o .= '<div>' . $activities . '</div> ';
             $o .= $courserenderer->course_section_add_cm_control($course, $section->section, 0);
             $o .= html_writer::end_tag('div');
-
-
             return $o;
         }
-
-        // End class
+        // End class.
     }
 }

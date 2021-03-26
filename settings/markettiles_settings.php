@@ -1,5 +1,27 @@
 <?php
+// This file is part of Moodle - http://moodle.org/
+//
+// Moodle is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// Moodle is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
+/**
+ * Markettiles settings page file.
+ *
+ * @packagetheme_fordson
+ * @copyright          2016 Chris Kenniburg
+ * @creditstheme_boost - MoodleHQ
+ * @licensehttp        ://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
 defined('MOODLE_INTERNAL') || die();
 
 /* Marketing Spot Settings temp*/
@@ -17,14 +39,14 @@ $setting = new admin_setting_configselect($name, $title, $description, $default,
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
-// This is the descriptor for Marketing Spot One
+// This is the descriptor for Marketing Spot One.
 $name = 'theme_fordson/marketing1info';
 $heading = get_string('marketing1', 'theme_fordson');
 $information = get_string('marketinginfodesc', 'theme_fordson');
 $setting = new admin_setting_heading($name, $heading, $information);
 $page->add($setting);
 
-// Marketing Spot One
+// Marketing Spot One.
 $name = 'theme_fordson/marketing1';
 $title = get_string('marketingtitle', 'theme_fordson');
 $description = get_string('marketingtitledesc', 'theme_fordson');
@@ -77,7 +99,7 @@ $setting = new admin_setting_configselect($name, $title, $description, $default,
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
-// This is the descriptor for Marketing Spot Two
+// This is the descriptor for Marketing Spot Two.
 $name = 'theme_fordson/marketing2info';
 $heading = get_string('marketing2', 'theme_fordson');
 $information = get_string('marketinginfodesc', 'theme_fordson');
@@ -137,7 +159,7 @@ $setting = new admin_setting_configselect($name, $title, $description, $default,
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
-// This is the descriptor for Marketing Spot Three
+// This is the descriptor for Marketing Spot Three.
 $name = 'theme_fordson/marketing3info';
 $heading = get_string('marketing3', 'theme_fordson');
 $information = get_string('marketinginfodesc', 'theme_fordson');
@@ -197,14 +219,14 @@ $setting = new admin_setting_configselect($name, $title, $description, $default,
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
-// This is the descriptor for Marketing Spot Four
+// This is the descriptor for Marketing Spot Four.
 $name = 'theme_fordson/marketing4info';
 $heading = get_string('marketing4', 'theme_fordson');
 $information = get_string('marketinginfodesc', 'theme_fordson');
 $setting = new admin_setting_heading($name, $heading, $information);
 $page->add($setting);
 
-// Marketing Spot
+// Marketing Spot.
 $name = 'theme_fordson/marketing4';
 $title = get_string('marketingtitle', 'theme_fordson');
 $description = get_string('marketingtitledesc', 'theme_fordson');
@@ -257,14 +279,14 @@ $setting = new admin_setting_configselect($name, $title, $description, $default,
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
-// This is the descriptor for Marketing Spot Four
+// This is the descriptor for Marketing Spot Four.
 $name = 'theme_fordson/marketing5info';
 $heading = get_string('marketing5', 'theme_fordson');
 $information = get_string('marketinginfodesc', 'theme_fordson');
 $setting = new admin_setting_heading($name, $heading, $information);
 $page->add($setting);
 
-// Marketing Spot
+// Marketing Spot.
 $name = 'theme_fordson/marketing5';
 $title = get_string('marketingtitle', 'theme_fordson');
 $description = get_string('marketingtitledesc', 'theme_fordson');
@@ -317,14 +339,14 @@ $setting = new admin_setting_configselect($name, $title, $description, $default,
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
-// This is the descriptor for Marketing Spot Four
+// This is the descriptor for Marketing Spot Four.
 $name = 'theme_fordson/marketing6info';
 $heading = get_string('marketing6', 'theme_fordson');
 $information = get_string('marketinginfodesc', 'theme_fordson');
 $setting = new admin_setting_heading($name, $heading, $information);
 $page->add($setting);
 
-// Marketing Spot
+// Marketing Spot.
 $name = 'theme_fordson/marketing6';
 $title = get_string('marketingtitle', 'theme_fordson');
 $description = get_string('marketingtitledesc', 'theme_fordson');
@@ -377,14 +399,14 @@ $setting = new admin_setting_configselect($name, $title, $description, $default,
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
-// This is the descriptor for Marketing Spot
+// This is the descriptor for Marketing Spot.
 $name = 'theme_fordson/marketing7info';
 $heading = get_string('marketing7', 'theme_fordson');
 $information = get_string('marketinginfodesc', 'theme_fordson');
 $setting = new admin_setting_heading($name, $heading, $information);
 $page->add($setting);
 
-// Marketing Spot Seven
+// Marketing Spot Seven.
 $name = 'theme_fordson/marketing7';
 $title = get_string('marketingtitle', 'theme_fordson');
 $description = get_string('marketingtitledesc', 'theme_fordson');
@@ -437,14 +459,14 @@ $setting = new admin_setting_configselect($name, $title, $description, $default,
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
-// This is the descriptor for Marketing Spot
+// This is the descriptor for Marketing Spot.
 $name = 'theme_fordson/marketing8info';
 $heading = get_string('marketing8', 'theme_fordson');
 $information = get_string('marketinginfodesc', 'theme_fordson');
 $setting = new admin_setting_heading($name, $heading, $information);
 $page->add($setting);
 
-// Marketing Spot Eight
+// Marketing Spot Eight.
 $name = 'theme_fordson/marketing8';
 $title = get_string('marketingtitle', 'theme_fordson');
 $description = get_string('marketingtitledesc', 'theme_fordson');
@@ -497,14 +519,14 @@ $setting = new admin_setting_configselect($name, $title, $description, $default,
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
-// This is the descriptor for Marketing Spot
+// This is the descriptor for Marketing Spot.
 $name = 'theme_fordson/marketing9info';
 $heading = get_string('marketing9', 'theme_fordson');
 $information = get_string('marketinginfodesc', 'theme_fordson');
 $setting = new admin_setting_heading($name, $heading, $information);
 $page->add($setting);
 
-// Marketing Spot Nine
+// Marketing Spot Nine.
 $name = 'theme_fordson/marketing9';
 $title = get_string('marketingtitle', 'theme_fordson');
 $description = get_string('marketingtitledesc', 'theme_fordson');

@@ -118,14 +118,14 @@ $setting = new admin_setting_configselect($name, $title, $description, $default,
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
-// This is the descriptor for slide
+// This is the descriptor for slide.
 $name = 'theme_fordson/slide1info';
 $heading = get_string('slide1info', 'theme_fordson');
 $information = get_string('slide1infodesc', 'theme_fordson');
 $setting = new admin_setting_heading($name, $heading, $information);
 $page->add($setting);
 
-// Slide title
+// Slide title.
 $name = 'theme_fordson/slide1title';
 $title = get_string('slidetitle', 'theme_fordson');
 $description = get_string('slidetitle_desc', 'theme_fordson');
@@ -134,7 +134,7 @@ $setting = new admin_setting_configtext($name, $title, $description, $default);
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
-//Slide Description
+// Slide Description.
 $name = 'theme_fordson/slide1content';
 $title = get_string('slidecontent', 'theme_fordson');
 $description = get_string('slidecontent_desc', 'theme_fordson');
@@ -143,7 +143,7 @@ $setting = new admin_setting_confightmleditor($name, $title, $description, $defa
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
-// logo image.
+// Logo image.
 $name = 'theme_fordson/slide1image';
 $title = get_string('slideimage', 'theme_fordson');
 $description = get_string('slideimage_desc', 'theme_fordson');
@@ -151,14 +151,14 @@ $setting = new admin_setting_configstoredfile($name, $title, $description, 'slid
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
-// This is the descriptor for slide
+// This is the descriptor for slide.
 $name = 'theme_fordson/slide2info';
 $heading = get_string('slide2info', 'theme_fordson');
 $information = get_string('slide2infodesc', 'theme_fordson');
 $setting = new admin_setting_heading($name, $heading, $information);
 $page->add($setting);
 
-// Slide title
+// Slide title.
 $name = 'theme_fordson/slide2title';
 $title = get_string('slidetitle', 'theme_fordson');
 $description = get_string('slidetitle_desc', 'theme_fordson');
@@ -167,7 +167,7 @@ $setting = new admin_setting_configtext($name, $title, $description, $default);
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
-//Slide Description
+// Slide Description.
 $name = 'theme_fordson/slide2content';
 $title = get_string('slidecontent', 'theme_fordson');
 $description = get_string('slidecontent_desc', 'theme_fordson');
@@ -176,7 +176,7 @@ $setting = new admin_setting_confightmleditor($name, $title, $description, $defa
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
-// logo image.
+// Logo image.
 $name = 'theme_fordson/slide2image';
 $title = get_string('slideimage', 'theme_fordson');
 $description = get_string('slideimage_desc', 'theme_fordson');
@@ -184,13 +184,13 @@ $setting = new admin_setting_configstoredfile($name, $title, $description, 'slid
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
-// This is the descriptor for slide
+// This is the descriptor for slide.
 $name = 'theme_fordson/slide3info';
 $heading = get_string('slide3info', 'theme_fordson');
 $information = get_string('slide3infodesc', 'theme_fordson');
 $setting = new admin_setting_heading($name, $heading, $information);
 $page->add($setting);
-// Slide title
+// Slide title.
 $name = 'theme_fordson/slide3title';
 $title = get_string('slidetitle', 'theme_fordson');
 $description = get_string('slidetitle_desc', 'theme_fordson');
@@ -199,7 +199,7 @@ $setting = new admin_setting_configtext($name, $title, $description, $default);
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
-//Slide Description
+// Slide Description.
 $name = 'theme_fordson/slide3content';
 $title = get_string('slidecontent', 'theme_fordson');
 $description = get_string('slidecontent_desc', 'theme_fordson');
@@ -208,7 +208,7 @@ $setting = new admin_setting_confightmleditor($name, $title, $description, $defa
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
-// logo image.
+// Logo image.
 $name = 'theme_fordson/slide3image';
 $title = get_string('slideimage', 'theme_fordson');
 $description = get_string('slideimage_desc', 'theme_fordson');

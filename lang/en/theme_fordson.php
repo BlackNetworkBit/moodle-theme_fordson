@@ -121,7 +121,7 @@ $string['showcourseheaderimage_desc'] = 'Allow teachers to customize the course 
 $string['headerlogo'] = 'Header Logo';
 $string['headerlogo_desc'] = 'This logo will be displayed at the top of the page in the header area. It uses bootstrap responsive image scaling.';
 
-//Slideshow
+// Slideshow.
 $string['slideshowsettings'] = 'Slideshow';
 $string['slideshowheight'] = 'Slideshow Height';
 $string['slideshowheight_desc'] = 'Adjust the height of the slideshow on the Site Home/Dashboard pages. This setting is ignored on the Custom Login Page.  On the Custom Login Page the slide height is determined by page size and width.';
@@ -147,7 +147,7 @@ $string['slideshowpages0'] = 'Show on custom login page only';
 $string['slideshowpages1'] = 'Show on Site Home and Dashboard only';
 $string['slideshowpages2'] = 'Show everywhere';
 
-// Footer
+// Footer.
 $string['footerheading'] = 'Footer';
 $string['brandorganization'] = 'Organization Name';
 $string['brandorganizationdesc'] = 'Organization name to appear in the footer.';
@@ -284,7 +284,7 @@ $string['navbarcolorswitch_desc'] = 'This feature changes the color of the navba
 $string['navbarcolorswitch_on'] = 'Change navbar color based on role.';
 $string['navbarcolorswitch_off'] = 'Do not change navbar color based on role.';
 
-//teacher and student dashboard slider
+// Teacher and student dashboard slider.
 $string['userlinks'] = 'User Links';
 $string['userlinks_desc'] = 'Manage your students';
 $string['qbank'] = 'Question Bank';
@@ -304,7 +304,7 @@ $string['myprogresspercentage'] = '% Complete';
 $string['mygradestext'] = 'My Grades';
 
 
-// Menu Settings
+// Menu Settings.
 $string['menusettings'] = 'Menu settings';
 $string['thiscourse'] = 'This Course';
 $string['courseactivities'] = 'Course Activites';
@@ -392,7 +392,7 @@ $string['siteadminquicklink'] = 'Site Administration';
 $string['shownavclosed'] = 'Nav Drawer Closed by Default';
 $string['shownavclosed_desc'] = 'Show the navigation drawer collapsed for all users by default on each page.';
 
-//FP Icon Nav
+// FP Icon Nav.
 $string['navicon1'] = 'Homepage Icon One';
 $string['navicon2'] = 'Homepage Icon Two';
 $string['navicon3'] = 'Homepage Icon Three';
@@ -402,7 +402,7 @@ $string['navicon6'] = 'Homepage Icon Six';
 $string['navicon7'] = 'Homepage Icon Seven';
 $string['navicon8'] = 'Homepage Icon Eight';
 
-// Custom Login Icon Nav
+// Custom Login Icon Nav.
 $string['loginnavicon1'] = 'Icon One';
 $string['loginnavicon2'] = 'Icon Two';
 $string['loginnavicon3'] = 'Icon Three';
@@ -433,7 +433,7 @@ $string['fploginform'] = 'Login Form Color';
 $string['fploginform_desc'] = 'Background color of the login form on the custom homepage.';
 
 
-//FP Icon Nav default text for buttons
+// FP Icon Nav default text for buttons.
 $string['naviconbutton1textdefault'] = 'Dashboard';
 $string['naviconbutton2textdefault'] = 'Calendar';
 $string['naviconbutton3textdefault'] = 'Badges';
@@ -459,11 +459,11 @@ $string['naviconbuttontextdesc'] = 'Text to appear below the icon.';
 $string['naviconbuttonurl'] = 'Link URL';
 $string['naviconbuttonurldesc'] = 'URL the button will point to. You can link to anywhere including outside websites  just enter the proper URL.  If your Moodle site is in a subdirectory the default URL will not work.  Please adjust the URL to reflect the subdirectory. Example if "moodle" was your subdirectory folder then the URL would need to be changed to /moodle/my/ ';
 
-//Edit Button Text
+// Edit Button Text.
 $string['editon'] = 'Turn Edit On';
 $string['editoff'] = 'Turn Edit Off';
 
-//Marketing Tiles
+// Marketing Tiles.
 $string['marketingheading'] = 'Marketing Tiles';
 $string['marketinginfodesc'] = 'Enter the settings for your marketing spot.  You must include a title in order for the Marketing Spot to appear.  The title will activate the individual Marketing Spots.';
 $string['marketingheadingsub'] = 'Three locations on the front page to add information and links';
@@ -509,7 +509,7 @@ $string['displaybottom'] = 'Display at Bottom of Page';
 $string['markettextbg'] = 'Marketing Tile Text Background';
 $string['markettextbg_desc'] = 'Background colour for the text area of the marketing tiles.';
 
-//Alerts
+// Alerts.
 $string['alert'] = 'Homepage Alert';
 $string['alert_desc'] = 'This is a special alert message that will appear on the homepage.';
 

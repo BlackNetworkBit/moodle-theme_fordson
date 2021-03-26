@@ -25,10 +25,10 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-// Icon Navigation);
+// Icon Navigation.
 $page = new admin_settingpage('theme_fordson_iconnavheading', get_string('iconnavheading', 'theme_fordson'));
 
-// This is the descriptor for icon One
+// This is the descriptor for icon One.
 $name = 'theme_fordson/iconwidthinfo';
 $heading = get_string('iconwidthinfo', 'theme_fordson');
 $information = get_string('iconwidthinfodesc', 'theme_fordson');
@@ -60,14 +60,14 @@ $setting = new admin_setting_configselect($name, $title, $description, $default,
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
-// This is the descriptor for teacher create a course
+// This is the descriptor for teacher create a course.
 $name = 'theme_fordson/createinfo';
 $heading = get_string('createinfo', 'theme_fordson');
 $information = get_string('createinfodesc', 'theme_fordson');
 $setting = new admin_setting_heading($name, $heading, $information);
 $page->add($setting);
 
-// Creator Icon
+// Creator Icon.
 $name = 'theme_fordson/createicon';
 $title = get_string('navicon', 'theme_fordson');
 $description = get_string('navicondesc', 'theme_fordson');
@@ -92,14 +92,14 @@ $setting = new admin_setting_configtext($name, $title, $description, $default, P
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
-// This is the descriptor for teacher create a course
+// This is the descriptor for teacher create a course.
 $name = 'theme_fordson/sliderinfo';
 $heading = get_string('sliderinfo', 'theme_fordson');
 $information = get_string('sliderinfodesc', 'theme_fordson');
 $setting = new admin_setting_heading($name, $heading, $information);
 $page->add($setting);
 
-// Creator Icon
+// Creator Icon.
 $name = 'theme_fordson/slideicon';
 $title = get_string('navicon', 'theme_fordson');
 $description = get_string('naviconslidedesc', 'theme_fordson');
@@ -125,14 +125,14 @@ $setting = new admin_setting_confightmleditor($name, $title, $description, $defa
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
-// This is the descriptor for icon One
+// This is the descriptor for icon One.
 $name = 'theme_fordson/navicon1info';
 $heading = get_string('navicon1', 'theme_fordson');
 $information = get_string('navicondesc', 'theme_fordson');
 $setting = new admin_setting_heading($name, $heading, $information);
 $page->add($setting);
 
-// icon One
+// Icon One.
 $name = 'theme_fordson/nav1icon';
 $title = get_string('navicon', 'theme_fordson');
 $description = get_string('navicondesc', 'theme_fordson');
@@ -169,7 +169,7 @@ $setting = new admin_setting_configselect($name, $title, $description, $default,
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
-// This is the descriptor for icon One
+// This is the descriptor for icon One.
 $name = 'theme_fordson/navicon2info';
 $heading = get_string('navicon2', 'theme_fordson');
 $information = get_string('navicondesc', 'theme_fordson');
@@ -212,7 +212,7 @@ $setting = new admin_setting_configselect($name, $title, $description, $default,
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
-// This is the descriptor for icon three
+// This is the descriptor for icon three.
 $name = 'theme_fordson/navicon3info';
 $heading = get_string('navicon3', 'theme_fordson');
 $information = get_string('navicondesc', 'theme_fordson');
@@ -255,7 +255,7 @@ $setting = new admin_setting_configselect($name, $title, $description, $default,
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
-// This is the descriptor for icon four
+// This is the descriptor for icon four.
 $name = 'theme_fordson/navicon4info';
 $heading = get_string('navicon4', 'theme_fordson');
 $information = get_string('navicondesc', 'theme_fordson');
@@ -298,7 +298,7 @@ $setting = new admin_setting_configselect($name, $title, $description, $default,
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
-// This is the descriptor for icon four
+// This is the descriptor for icon four.
 $name = 'theme_fordson/navicon5info';
 $heading = get_string('navicon5', 'theme_fordson');
 $information = get_string('navicondesc', 'theme_fordson');
@@ -341,7 +341,7 @@ $setting = new admin_setting_configselect($name, $title, $description, $default,
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
-// This is the descriptor for icon six
+// This is the descriptor for icon six.
 $name = 'theme_fordson/navicon6info';
 $heading = get_string('navicon6', 'theme_fordson');
 $information = get_string('navicondesc', 'theme_fordson');
@@ -384,7 +384,7 @@ $setting = new admin_setting_configselect($name, $title, $description, $default,
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
-// This is the descriptor for icon seven
+// This is the descriptor for icon seven.
 $name = 'theme_fordson/navicon7info';
 $heading = get_string('navicon7', 'theme_fordson');
 $information = get_string('navicondesc', 'theme_fordson');
@@ -427,7 +427,7 @@ $setting = new admin_setting_configselect($name, $title, $description, $default,
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
-// This is the descriptor for icon eight
+// This is the descriptor for icon eight.
 $name = 'theme_fordson/navicon8info';
 $heading = get_string('navicon8', 'theme_fordson');
 $information = get_string('navicondesc', 'theme_fordson');

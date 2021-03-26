@@ -45,7 +45,7 @@ $THEME->parents = ['boost'];
 $THEME->sheets = [''];
 $THEME->editor_sheets = [''];
 
-// Toggle display of blocks
+// Toggle display of blocks.
 $THEME->layouts = [
     'base' => [
         'file' => 'columns2.php',
@@ -197,7 +197,7 @@ $THEME->prescsscallback = 'theme_fordson_get_pre_scss';
 $THEME->extrascsscallback = 'theme_fordson_get_extra_scss';
 $THEME->rendererfactory = 'theme_overridden_renderer_factory';
 
-// Toggle display of blocks
+// Toggle display of blocks.
 if ($THEME->settings->blockdisplay == 1) {
     $THEME->addblockposition = BLOCK_ADDBLOCK_POSITION_DEFAULT;
 }

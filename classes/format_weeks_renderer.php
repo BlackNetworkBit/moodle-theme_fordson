@@ -37,13 +37,10 @@ class theme_fordson_format_weeks_renderer extends format_weeks_renderer {
     protected function section_summary($section, $course, $mods) {
         $classattr = 'section main section-summary clearfix';
         $linkclasses = '';
-
         $total = 0;
         $complete = 0;
-        $completioninfo = new completion_info($course);
         $cancomplete = isloggedin() && !isguestuser();
         $modinfo = get_fast_modinfo($course);
-
         $sectionmods = [];
         $completioninfo = new completion_info($course);
         if (!empty($modinfo->sections[$section->section])) {
@@ -67,7 +64,8 @@ class theme_fordson_format_weeks_renderer extends format_weeks_renderer {
                     if ($cancomplete && $completioninfo->is_enabled($thismod) != COMPLETION_TRACKING_NONE) {
                         $total++;
                         $completiondata = $completioninfo->get_data($thismod, true);
-                        if ($completiondata->completionstate == COMPLETION_COMPLETE || $completiondata->completionstate == COMPLETION_COMPLETE_PASS) {
+                        if ($completiondata->completionstate == COMPLETION_COMPLETE ||
+                            $completiondata->completionstate == COMPLETION_COMPLETE_PASS) {
                             $complete++;
                         }
                     }
@@ -165,8 +163,6 @@ class theme_fordson_format_weeks_renderer extends format_weeks_renderer {
      * @return string HTML to output.
      */
     protected function section_activity_summary($section, $course, $mods) {
-        global $PAGE;
-
         $modinfo = get_fast_modinfo($course);
         if (empty($modinfo->sections[$section->section])) {
             return '';
@@ -197,7 +193,8 @@ class theme_fordson_format_weeks_renderer extends format_weeks_renderer {
                 if ($cancomplete && $completioninfo->is_enabled($thismod) != COMPLETION_TRACKING_NONE) {
                     $total++;
                     $completiondata = $completioninfo->get_data($thismod, true);
-                    if ($completiondata->completionstate == COMPLETION_COMPLETE || $completiondata->completionstate == COMPLETION_COMPLETE_PASS) {
+                    if ($completiondata->completionstate == COMPLETION_COMPLETE ||
+                        $completiondata->completionstate == COMPLETION_COMPLETE_PASS) {
                         $complete++;
                     }
                 }
@@ -211,14 +208,14 @@ class theme_fordson_format_weeks_renderer extends format_weeks_renderer {
 
         $output = '';
         // Output Link to Topic modules.
-        // $title = get_section_name($course, $section);
+        // Later usage: $title = get_section_name($course, $section); ?
         $linktitle = get_string('viewsectionmodules', 'theme_fordson');
         $output = html_writer::link(new moodle_url('/course/view.php',
-            ['id' => $PAGE->course->id, 'section' => $section->section]),
+            ['id' => $this->page->course->id, 'section' => $section->section]),
             $linktitle,
             ['class' => 'section-go-link btn btn-secondary']);
 
-        // Output section activities summary
+        // Output section activities summary.
         $output .= html_writer::start_tag('div',
             [
                 'class' => 'section-summary-activities'

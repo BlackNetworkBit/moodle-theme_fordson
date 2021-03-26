@@ -31,7 +31,7 @@ $page->add(new admin_setting_heading('theme_fordson_footer',
     get_string('footerheadingsub', 'theme_fordson'),
     format_text(get_string('footerdesc', 'theme_fordson'), FORMAT_MARKDOWN)));
 
-// footer branding
+// Footer branding.
 $name = 'theme_fordson/brandorganization';
 $title = get_string('brandorganization', 'theme_fordson');
 $description = get_string('brandorganizationdesc', 'theme_fordson');
@@ -40,7 +40,7 @@ $setting = new admin_setting_configtext($name, $title, $description, $default);
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
-// footer branding
+// Footer branding.
 $name = 'theme_fordson/brandwebsite';
 $title = get_string('brandwebsite', 'theme_fordson');
 $description = get_string('brandwebsitedesc', 'theme_fordson');
@@ -49,7 +49,7 @@ $setting = new admin_setting_configtext($name, $title, $description, $default);
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
-// footer branding
+// Footer branding.
 $name = 'theme_fordson/brandphone';
 $title = get_string('brandphone', 'theme_fordson');
 $description = get_string('brandphonedesc', 'theme_fordson');
@@ -58,7 +58,7 @@ $setting = new admin_setting_configtext($name, $title, $description, $default);
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
-// footer branding
+// Footer branding.
 $name = 'theme_fordson/brandemail';
 $title = get_string('brandemail', 'theme_fordson');
 $description = get_string('brandemaildesc', 'theme_fordson');
@@ -77,7 +77,7 @@ $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
 
-// This is the descriptor for socialicons
+// This is the descriptor for socialicons.
 $name = 'theme_fordson/socialiconsinfo';
 $heading = get_string('footerheadingsocial', 'theme_fordson');
 $information = get_string('footerdesc', 'theme_fordson');
