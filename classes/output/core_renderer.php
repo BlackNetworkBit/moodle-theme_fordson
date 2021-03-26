@@ -192,6 +192,13 @@ class core_renderer extends \theme_boost\output\core_renderer {
         return $html;
     }
 
+    public function image_url($imagename, $component = 'moodle') {
+        // Strip -24, -64, -256  etc from the end of filetype icons so we
+        // only need to provide one SVG, see MDL-47082.
+        $imagename = preg_replace('/-\d\d\d?$/', '', $imagename);
+        return $this->page->theme->image_url($imagename, $component);
+    }
+
     public function get_generated_image_for_id($id) {
         // See if user uploaded a custom header background to the theme.
         $headerbg = $this->page->theme->setting_file_url('headerdefaultimage', 'headerdefaultimage');
@@ -201,13 +208,6 @@ class core_renderer extends \theme_boost\output\core_renderer {
             // Use the default theme image when no course image is detected.
             return $this->image_url('noimg', 'theme')->out();
         }
-    }
-
-    public function image_url($imagename, $component = 'moodle') {
-        // Strip -24, -64, -256  etc from the end of filetype icons so we
-        // only need to provide one SVG, see MDL-47082.
-        $imagename = preg_replace('/-\d\d\d?$/', '', $imagename);
-        return $this->page->theme->image_url($imagename, $component);
     }
 
     public function edit_button(moodle_url $url) {
