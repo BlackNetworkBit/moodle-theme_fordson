@@ -397,21 +397,21 @@ class core_renderer extends \theme_boost\output\core_renderer {
                         $mycoursesmax = PHP_INT_MAX;
                     }
                     if ($mycoursescatsubmenu) {
-                        $mycoursescatsubmenucats = [];
+                        $coursecats = [];
                         $mycoursescatsubmenucatsnumcourses = [];
-                        $categoriestoplist = false;
+                        $toplistc = false;
 
                         $categorieslist = $this->get_categories_list();
                         foreach ($categorieslist as $category) {
-                            if (empty($categoriestoplist[$category->id])) {
-                                $categoriestoplist[$category->id] = new \stdClass;
+                            if (empty($toplistc[$category->id])) {
+                                $toplistc[$category->id] = new \stdClass;
                                 if (!empty($category->parents)) {
                                     // Sub-category and the last entry in the array is the top.
-                                    $categoriestoplist[$category->id]->topid = $category->parents[(count($category->parents) - 1)];
+                                    $toplistc[$category->id]->topid = $category->parents[(count($category->parents) - 1)];
                                 } else {
                                     // We are a top level category.
-                                    $categoriestoplist[$category->id]->topid = $category->id;
-                                    $categoriestoplist[$category->id]->name = $categorieslist[$category->id]->name;
+                                    $toplistc[$category->id]->topid = $category->id;
+                                    $toplistc[$category->id]->name = $categorieslist[$category->id]->name;
                                 }
                             }
                         }
@@ -428,22 +428,22 @@ class core_renderer extends \theme_boost\output\core_renderer {
                                 break;
                             }
                         } else {
-                            if (empty($mycoursescatsubmenucats[$categoriestoplist[$course->category]->topid])) {
-                                $cattext = format_string($categoriestoplist[$categoriestoplist[$course->category]->topid]->name);
+                            if (empty($coursecats[$toplistc[$course->category]->topid])) {
+                                $cattext = format_string($toplistc[$toplistc[$course->category]->topid]->name);
                                 $caticon = 'folder-open';
                                 $catlabel = html_writer::tag('span',
                                     $this->getfontawesomemarkup($caticon) . html_writer::tag('span', ' ' . $cattext));
-                                $mycoursescatsubmenucats[$categoriestoplist[$course->category]->topid] = $branch->add($catlabel,
+                                $coursecats[$toplistc[$course->category]->topid] = $branch->add($catlabel,
                                     $this->page->url,
                                     $cattext);
-                                $mycoursescatsubmenucatsnumcourses[$categoriestoplist[$course->category]->topid] = 0;
+                                $mycoursescatsubmenucatsnumcourses[$toplistc[$course->category]->topid] = 0;
                             }
-                            if ($mycoursescatsubmenucatsnumcourses[$categoriestoplist[$course->category]->topid] < $mycoursesmax) {
+                            if ($mycoursescatsubmenucatsnumcourses[$toplistc[$course->category]->topid] < $mycoursesmax) {
                                 // Only add if we are within the course limit.
-                                if ($this->custom_menu_courses_add_course($mycoursescatsubmenucats[$categoriestoplist[$course->category]->topid],
+                                if ($this->custom_menu_courses_add_course($coursecats[$toplistc[$course->category]->topid],
                                     $course,
                                     $hasdisplayhiddenmycourses)) {
-                                    $mycoursescatsubmenucatsnumcourses[$categoriestoplist[$course->category]->topid] += 1;
+                                    $mycoursescatsubmenucatsnumcourses[$toplistc[$course->category]->topid] += 1;
                                 }
                             }
                         }
@@ -512,14 +512,7 @@ class core_renderer extends \theme_boost\output\core_renderer {
                 }
             }
         }
-        $content = $this->render_custom_menu($menu);
-        /*
-        foreach ($menu->get_children() as $item) {
-            $context = $item->export_for_template($this);
-            $content .= $this->render_from_template('core/custom_menu_item', $context);
-        }
-        */
-        return $content;
+        return $this->render_custom_menu($menu);;
     }
 
     /**
@@ -527,6 +520,7 @@ class core_renderer extends \theme_boost\output\core_renderer {
      *
      * @param custom_menu $menu
      * @return string $content
+     * @throws \moodle_exception
      */
     protected function render_custom_menu(custom_menu $menu) {
         if ($this->page->theme->settings->mycoursescatsubmenu) {
@@ -571,7 +565,8 @@ class core_renderer extends \theme_boost\output\core_renderer {
             if (!empty($course->timestart)) {
                 $enrolledclass .= ' class="onlyenrolled"';
             }
-            $branchlabel = '<span' . $enrolledclass . '>' . $this->getfontawesomemarkup('graduation-cap') . format_string($course->fullname) . '</span>';
+            $branchlabel = '<span' . $enrolledclass . '>' .
+                $this->getfontawesomemarkup('graduation-cap') . format_string($course->fullname) . '</span>';
             $branch->add($branchlabel, $branchurl, $branchtitle);
             $courseadded = true;
         } else if (has_capability('moodle/course:viewhiddencourses',
