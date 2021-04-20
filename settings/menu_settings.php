@@ -23,6 +23,8 @@
  * @licensehttp        ://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+use theme_fordson\settings\fordson_admin_setting_configinteger;
+
 defined('MOODLE_INTERNAL') || die();
 
 $page = new admin_settingpage('theme_fordson_menusettings', get_string('menusettings', 'theme_fordson'));
@@ -143,6 +145,41 @@ $default = true;
 $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
+
+
+
+// Toggle hidden courses display in custommenu.
+$name = 'theme_fordson/displayhiddenmycourses';
+$title = get_string('displayhiddenmycourses', 'theme_fordson');
+$description = get_string('displayhiddenmycoursesdesc', 'theme_fordson');
+$default = true;
+$setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+// No need for callback as CSS not changed.
+$page->add($setting);
+
+// Toggle category course sub-menu.
+$name = 'theme_fordson/mycoursescatsubmenu';
+$title = get_string('mycoursescatsubmenu', 'theme_fordson');
+$description = get_string('mycoursescatsubmenudesc', 'theme_fordson');
+$default = false;
+$setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+$setting->set_updatedcallback('theme_reset_all_caches');
+$page->add($setting);
+
+// Max courses.
+$name = 'theme_fordson/mycoursesmax';
+$title = get_string('mycoursesmax', 'theme_fordson');
+$default = 0;
+$lower = 0;
+$upper = 20;
+$description = get_string('mycoursesmaxdesc', 'theme_fordson',
+    array('lower' => $lower, 'upper' => $upper));
+
+$setting = new fordson_admin_setting_configinteger($name, $title, $description, $default, $lower, $upper);
+// No need for callback as CSS not changed.
+$page->add($setting);
+
+
 
 // Toggle courses display in custommenu.
 $name = 'theme_fordson/displaythiscourse';

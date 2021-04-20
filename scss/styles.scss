@@ -1306,6 +1306,15 @@ nav.fixed-top.navbar.navbar-student.navbar-expand.moodle-has-zindex {
   background-color: $studentnavbarcolor;
 }
 
+// Navbar Selected Element Focus
+ul.nav .dropdown .open {
+  background-color: $primary;
+}
+
+ul.nav .dropdown .open a.secondary {
+  color: $body-bg;
+}
+
 // Fordson CourseFormat Enhancements.  Please download and install https://moodle.org/plugins/format_collapsibletopics and turn on the special features for the Fordson Course Format in theme settings.
 body.editing .course-content ul.collapsibletopics a.sectiontoggle {
   float: unset;

@@ -344,6 +344,13 @@ $string['displaymycoursesdesc'] = 'Display enrolled courses for users in the top
 $string['displaythiscourse'] = 'Display This Course Menu';
 $string['displaythiscoursedesc'] = 'Display jump-to-section in course menu for users in the top navigation bar.  This contains menu items previously found in the nav drawer.';
 
+$string['displayhiddenmycourses'] = 'Display hidden courses';
+$string['displayhiddenmycoursesdesc'] = 'Display hidden courses for users in the \'Courses menu\' if they have permission to view hidden courses';
+$string['mycoursescatsubmenu'] = 'Category and course sub-menu';
+$string['mycoursescatsubmenudesc'] = 'Organise courses into a sub-menu based upon the top level category they are in.  When \'enablecategoryicon\' is \'false\' then the category icon used will be the theme default, when \'true\' then will be either the value of \'defaultcategoryicon\' or the category\'s itself if \'enablecustomcategoryicon\' is true.  The \'mycoursesmax\' setting will still apply but on a per-category level.';
+$string['mycoursesmax'] = 'Max courses';
+$string['mycoursesmaxdesc'] = 'State up to how many courses should be listed between {$a->lower} and {$a->upper} where \'{$a->lower}\' represents all.';
+
 $string['mycoursetitle'] = 'Terminology';
 $string['mycoursetitledesc'] = 'Change the terminology for the "My Courses" link in the dropdown menu';
 

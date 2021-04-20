@@ -68,4 +68,75 @@
     </ul>
     <!-- search_box -->
 </nav>
+{{#js}}
+    function hideMenu(element) {
+        $(element).parent().removeClass('open show');
+        let controller = $('#' + $(element).attr('aria-controls'));
+        controller.removeClass('show');
+    }
 
+    function showMenu(element) {
+        $(element).parent().addClass('open show');
+        let controller = $('#' + $(element).attr('aria-controls'));
+        controller.addClass('show');
+    }
+
+    function hideSecondary(except = null) {
+        $('li.dropdown.mega-dropdown a.secondary').each(function () {
+            if (!$(this).is(except)) {
+                hideMenu(this);
+            }
+        });
+    }
+
+    function hideAll() {
+        $('li.dropdown.mega-dropdown a').each(function () {
+            hideMenu(this);
+        });
+    }
+
+    function init() {
+        $('li.dropdown.mega-dropdown a.primary').on('click', function (event) {
+            if ($(this).parent().hasClass('open')) {
+                hideAll();
+            } else {
+                showMenu(this);
+            }
+        });
+
+        $('li.dropdown.mega-dropdown a.secondary').on('click', function (event) {
+
+            if (!$(this).parent().hasClass('open')) {
+                showMenu(this);
+                hideSecondary($(this));
+            } else {
+                hideSecondary();
+            }
+            let controller = $('#' + $(this).attr('aria-controls'));
+            let width = $(this).parent().parent().parent().width();
+            let top = $(this).parent().offset().top - parseInt(controller.css('padding-top'))
+                    - parseInt(controller.css('margin-top')) - parseInt($(this).first().css('padding-top'))
+                    - parseInt(controller.first().css('margin-top'));
+            controller.css('left', width + 'px');
+            controller.css('top', top + 'px');
+        });
+
+        $('body').on('click', function (e) {
+            if ((!$('li.dropdown.mega-dropdown').is(e.target)
+                    && $('li.dropdown.mega-dropdown').has(e.target).length === 0
+                    && $('.open').has(e.target).length === 0) && (!$('li.dropdown.mega-dropdown').is(e.target)
+                    && $('li.dropdown.mega-dropdown').has(e.target).length === 0
+                    && $('.open').has(e.target).length === 0)
+            ) {
+                hideAll();
+            }
+            if ((!$('li.dropdown.mega-dropdown').is(e.target)
+                    && $('li.dropdown.mega-dropdown').has(e.target).length === 0
+                    && $('.open').has(e.target).length === 0)
+            ) {
+                hideSecondary();
+            }
+        });
+    }
+    init();
+{{/js}}
